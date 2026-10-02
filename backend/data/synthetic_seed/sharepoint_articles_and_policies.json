@@ -1,0 +1,140 @@
+{
+  "tenant_name": "contoso.sharepoint.com",
+  "sites": [
+    {
+      "site_name": "Human Resources",
+      "site_url": "https://contoso.sharepoint.com/sites/HumanResources",
+      "policies": [
+        {
+          "title": "Hybrid and Remote Work Policy 2026",
+          "url": "https://contoso.sharepoint.com/sites/HumanResources/Policies/Hybrid_and_Remote_Work_Policy_2026.aspx",
+          "version": "3.2",
+          "last_updated": "2026-08-15",
+          "point_of_contact": "Sarah Jenkins (Director of HR)",
+          "summary": "Regular full-time employees are eligible for hybrid work requiring a minimum of two designated in-office collaborative days per week (Tuesdays and Thursdays), with up to three remote days upon direct manager approval."
+        },
+        {
+          "title": "Paid Parental Leave Policy 2026",
+          "url": "https://contoso.sharepoint.com/sites/HumanResources/Policies/Paid_Parental_Leave_Policy_2026.aspx",
+          "version": "3.2",
+          "last_updated": "2026-08-15",
+          "summary": "Full-time regular employees are eligible for up to 16 weeks of fully paid parental leave following the birth, adoption, or foster placement of a child, to be taken within the first 12 months."
+        },
+        {
+          "title": "Employee Education & Tuition Assistance Policy",
+          "url": "https://contoso.sharepoint.com/sites/HumanResources/Policies/Tuition_Assistance_Policy.aspx",
+          "summary": "Full-time employees with at least 6 months of tenure can receive up to $5,250 annually for accredited degree coursework, certifications, and technical conferences, subject to manager pre-approval and a passing grade of 'B' or higher."
+        },
+        {
+          "title": "Medical Leave of Absence (FMLA) Guide",
+          "url": "https://contoso.sharepoint.com/sites/HumanResources/Leave/FMLA_Application_Guide.aspx",
+          "required_forms": [
+            "Form FMLA-101 (Employee Leave Request Application)",
+            "Form WH-380-E (Healthcare Provider Certification)"
+          ],
+          "submission_window": "Submit via HR Portal at least 30 days in advance of planned leave."
+        }
+      ]
+    },
+    {
+      "site_name": "Information Security",
+      "site_url": "https://contoso.sharepoint.com/sites/InformationSecurity",
+      "policies": [
+        {
+          "title": "Contoso Acceptable Use Policy v4",
+          "url": "https://contoso.sharepoint.com/sites/InformationSecurity/Shared%20Documents/Policies/Contoso_Acceptable_Use_Policy_v4.pdf",
+          "summary": "Governs acceptable usage of corporate hardware, software, cloud accounts, and data assets."
+        },
+        {
+          "title": "Security Incident Reporting & Escalation SOP",
+          "url": "https://contoso.sharepoint.com/sites/InformationSecurity/SOPs/Security_Incident_Escalation_SOP.aspx",
+          "steps": [
+            "1. Identification: Detect and log anomalous activity via SIEM alerts.",
+            "2. Immediate Containment: Isolate affected host/account within 15 minutes of triage.",
+            "3. Escalation: Page the On-Call Incident Commander via PagerDuty.",
+            "4. Eradication & Recovery: Deploy verified remediation patches and restore clean backups.",
+            "5. Post-Incident Review: Publish blameless Root Cause Analysis (RCA) within 72 hours."
+          ]
+        },
+        {
+          "title": "Approved Third-Party AI Tool Whitelist & GenAI Usage",
+          "url": "https://contoso.sharepoint.com/sites/InformationSecurity/AI_Governance/GenAI_Acceptable_Use.aspx",
+          "summary": "Defines enterprise guidelines for using Google Gemini Enterprise and Microsoft Copilot; prohibits inputting confidential customer data into unapproved external LLMs."
+        }
+      ],
+      "active_initiatives": [
+        "Zero Trust Network Architecture migration",
+        "Mandatory quarterly phishing awareness training",
+        "Phasing out legacy hardware tokens in favor of FIDO2 WebAuthn biometric keys"
+      ]
+    },
+    {
+      "site_name": "Facilities & Physical Security",
+      "site_url": "https://contoso.sharepoint.com/sites/Facilities",
+      "procedures": [
+        {
+          "title": "Badge & Smartcard Replacement Procedure",
+          "url": "https://contoso.sharepoint.com/sites/Facilities/Pages/Badge-Replacement-Procedure.aspx",
+          "summary": "Submit a ServiceNow Service Request under 'Physical Security > Badge Replacement' (Form SEC-4001), obtain manager sign-off, and pick up the new badge with government-issued photo ID at the Security Operations Desk in Building B, 1st Floor."
+        }
+      ]
+    },
+    {
+      "site_name": "Finance & Travel Operations",
+      "site_url": "https://contoso.sharepoint.com/sites/Finance",
+      "point_of_contact": "Elena Rostova (Director of Finance Operations), travel-expenses@contoso.com",
+      "policies": [
+        {
+          "title": "Corporate Travel & Expense Policy 2026",
+          "url": "https://contoso.sharepoint.com/sites/Finance/Policies/Travel_and_Expense_Policy_2026.pdf",
+          "summary": "Domestic travel per diem capped at $75/day without overnight stay. Permits up to $60/day for mobile broadband hotspots during business travel."
+        },
+        {
+          "title": "FY26 Engineering Operating Budget v2.1",
+          "url": "https://contoso.sharepoint.com/sites/Finance/Budgets/FY26_Engineering_Operating_Budget.xlsx",
+          "total_budget": "$48.5M",
+          "breakdown": {
+            "Personnel & Compensation": "$28.0M",
+            "Cloud Hosting & Infrastructure": "$12.2M",
+            "Third-Party Software Licenses": "$5.1M",
+            "Research & Innovation Pilots": "$3.2M"
+          }
+        }
+      ]
+    },
+    {
+      "site_name": "Intranet News & Communications",
+      "site_url": "https://contoso.sharepoint.com/sites/Intranet",
+      "news_articles": [
+        {
+          "title": "Contoso Achieves ISO 27001 & SOC 2 Type II Recertification for All Cloud Operations",
+          "url": "https://contoso.sharepoint.com/sites/Intranet/SitePages/ISO-27001-Recertification-2026.aspx",
+          "published_date": "2026-09-29",
+          "author": "Corporate Communications",
+          "summary": "Annual audit completed with zero non-conformities across global cloud infrastructure."
+        },
+        {
+          "title": "Q3 Employee Town Hall: Record Cloud Growth and Innovation Awards",
+          "url": "https://contoso.sharepoint.com/sites/Intranet/SitePages/Q3-Townhall-Summary.aspx",
+          "published_date": "2026-09-18",
+          "author": "Executive Office",
+          "summary": "Highlighted 28% year-over-year cloud revenue growth, announced the launch of the Gemini Enterprise Pair Programming initiative across all engineering squads, and reiterated carbon neutrality by 2028."
+        },
+        {
+          "title": "Annual Benefits Open Enrollment Period Opens October 15",
+          "url": "https://contoso.sharepoint.com/sites/Intranet/SitePages/Benefits-Open-Enrollment-2026.aspx",
+          "published_date": "2026-09-05",
+          "author": "Human Resources",
+          "summary": "Window opens October 15 through November 15 for healthcare, dental, and wellness elections."
+        },
+        {
+          "title": "Executive Restructuring and Leadership Appointments Announced for Q3",
+          "url": "https://contoso.sharepoint.com/sites/Intranet/SitePages/Leadership-Announcement-Q3.aspx",
+          "published_date": "2026-08-30",
+          "author": "CEO Office",
+          "summary": "Confirmed appointment of Dr. Priya Raman as Chief Artificial Intelligence Officer, merged Infrastructure Operations and Platform Engineering into unified Core Systems, and formed the Customer Trust & Cybersecurity office."
+        }
+      ]
+    }
+  ]
+}

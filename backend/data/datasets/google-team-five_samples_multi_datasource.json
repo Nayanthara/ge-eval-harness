@@ -1,0 +1,60 @@
+[
+  {
+    "query": "What are Yahoo's Day 1 onboarding requirements, annual PTO and rollover allowances, and the monthly wellness stipend for full-time employees?",
+    "ground_truth": "1. Day 1 Onboarding Requirements: Complete security training and request system hardware permissions (Onboarding Guide).\n2. PTO & Rollover Allowances: Full-time employees receive 25 days of Paid Time Off (PTO) per calendar year, 5 floating holidays, and can roll over a maximum of 5 unused PTO days per year with excess expiring Dec 31 (Yahoo Employee Handbook).\n3. Wellness Stipend: Full-time employees receive a $150 per month wellness stipend for gym or fitness classes (Benefits Summary).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6",
+      "https://drive.google.com/open?id=19L5YCsfAMd-6xdHyj2GkbPfP4807Xoj9",
+      "https://drive.google.com/open?id=1d-CeAzUwJtGfWnY5KwbbG_UaDjWxhLZe"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6 | https://drive.google.com/open?id=19L5YCsfAMd-6xdHyj2GkbPfP4807Xoj9 | https://drive.google.com/open?id=1d-CeAzUwJtGfWnY5KwbbG_UaDjWxhLZe",
+    "description": "Multi-datasource cross-policy verification (Day 1 onboarding, PTO, and wellness)"
+  },
+  {
+    "query": "How much is the wellness stipend and what expenses qualify for monthly reimbursement?",
+    "ground_truth": "Eligible full-time employees receive up to $150 per month reimbursement for health and fitness expenses including gym memberships, fitness classes, athletic shoes, workout equipment, and mental health apps.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J",
+    "description": "Wellness stipend policy and eligible expense categories"
+  },
+  {
+    "query": "How do I use python at Yahoo and what are the recommended tools for virtual environments and linting?",
+    "ground_truth": "Standardize Python on uv or python3 -m venv for virtual environments, ruff for linting and code formatting, pytest for unit tests, and configure ~/.pip/pip.conf to use the internal Artifactory mirror (artifactory.yahoo.com).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO",
+    "description": "Python tooling, virtual environment setup, and Artifactory mirror"
+  },
+  {
+    "query": "How do TLS certificates work at Yahoo and can internal services still support TLS 1.0 or TLS 1.1?",
+    "ground_truth": "Authentication and encryption are enforced via Yahoo Certificate Authority (YCA) digital signatures and TLS handshakes. TLS 1.0 and 1.1 were sunset in October 2020; all microservices and edge gateways must enforce TLS 1.2 or TLS 1.3 minimum.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ",
+    "description": "TLS certificate authority management and protocol deprecation rules"
+  },
+  {
+    "query": "Compare the PTO rollover rules with the wellness stipend monthly rollover policy.",
+    "ground_truth": "PTO allows rolling over up to 5 unused days into the next calendar year, whereas the wellness stipend ($150/mo) is strictly use-it-or-lose-it with zero rollover.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6",
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6 | https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J",
+    "description": "Cross-policy comparison of PTO carryover versus monthly wellness stipend rollover"
+  }
+]

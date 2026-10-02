@@ -1,0 +1,27 @@
+<!-- Legacy hidden input structures for compatibility -->
+<div style="display: none;">
+    <input type="file" id="custom-dataset-file" accept=".csv" onchange="handleCustomDatasetUpload(this.files)">
+    <input type="file" id="master-file-input" accept=".csv" onchange="handleMasterFileUpload(this.files)">
+    <select id="benchmark-dataset-select">
+        <option value="custom_uploaded">custom_uploaded</option>
+        <option value="yahoo-team-full_enterprise_golden">yahoo-team-full_enterprise_golden</option>
+        <option value="google-team-gdrive_dev_golden">google-team-gdrive_dev_golden</option>
+        <option value="google-team-five_samples_multi_datasource">google-team-five_samples_multi_datasource</option>
+    </select>
+    <input type="checkbox" id="model-flash-35" value="gemini-3.5-flash" checked>
+    <input type="checkbox" id="model-pro-31" value="gemini-3.1-pro">
+    <input type="checkbox" id="instruct-default" value="Default" checked>
+    <input type="checkbox" id="instruct-custom" value="Custom">
+    <select id="max-concurrency-select"><option value="3">3</option></select>
+    <textarea id="custom-instruction-text"></textarea>
+    <span id="latency-status"></span>
+    <div id="latency-summary-container"><table><tbody id="latency-summary-body"></tbody></table></div>
+    
+    <table>
+        <tbody id="glean-results-body"></tbody>
+    </table>
+    <div id="upload-loading"></div>
+    <div id="upload-results-container"></div>
+    <button id="btn-run-ge-glean" onclick="runGEBenchmarkOnGleanQueries()"></button>
+    <div id="ge-glean-status"></div>
+</div>

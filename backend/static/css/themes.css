@@ -1,0 +1,121 @@
+/* Material 3 Light & Dark Theme Palettes and Global Variables */
+:root, [data-theme="light"] {
+    /* Material 3 Light Theme Palette */
+    --bg-main: #f8fafd;
+    --bg-card: #ffffff;
+    --bg-card-secondary: #f1f5f9;
+    --bg-hover: #eef2f8;
+    --border-color: #dbe0ea;
+    --accent-primary: #0b57d0;
+    --accent-glow: rgba(11, 87, 208, 0.15);
+    --accent-secondary: #6750a4;
+    --text-main: #1f1f1f;
+    --text-sub: #444746;
+    --input-bg: #ffffff;
+    --input-text: #1f1f1f;
+    --input-border: #c4c7c5;
+    --code-bg: #f1f5f9;
+    --code-text: #0b57d0;
+    --table-stripe: #f8fafc;
+    --success-color: #137333;
+    --danger-color: #b3261e;
+    --shadow-sm: 0 1px 3px rgba(60,64,67,0.08);
+    --shadow-md: 0 4px 12px rgba(60,64,67,0.12);
+    --font-display: 'Google Sans', 'Outfit', sans-serif;
+    --font-body: 'Roboto', 'Inter', sans-serif;
+
+    /* Material 3 System Mappings */
+    --md-sys-color-primary: #0b57d0;
+    --md-sys-color-on-primary: #ffffff;
+    --md-sys-color-primary-container: #d3e3fd;
+    --md-sys-color-on-primary-container: #041e49;
+    --md-sys-color-secondary: #575e71;
+    --md-sys-color-on-secondary: #ffffff;
+    --md-sys-color-secondary-container: #dbe2f9;
+    --md-sys-color-on-secondary-container: #141b2c;
+    --md-sys-color-surface: #ffffff;
+    --md-sys-color-on-surface: #1f1f1f;
+    --md-sys-color-outline: #74777f;
+    --md-sys-color-outline-variant: #c4c7c5;
+    --md-sys-color-error: #ba1a1a;
+    --md-sys-color-on-error: #ffffff;
+    --md-sys-color-background: #f8fafd;
+    --md-sys-color-on-background: #1f1f1f;
+}
+
+[data-theme="dark"] {
+    /* Material 3 Dark Theme Palette */
+    --bg-main: #0b0f19;
+    --bg-card: #151c2c;
+    --bg-card-secondary: #1e293b;
+    --bg-hover: #243048;
+    --border-color: #2e3c54;
+    --accent-primary: #38bdf8;
+    --accent-glow: rgba(56, 189, 248, 0.25);
+    --accent-secondary: #a78bfa;
+    --text-main: #f8fafc;
+    --text-sub: #94a3b8;
+    --input-bg: #0f172a;
+    --input-text: #f8fafc;
+    --input-border: #334155;
+    --code-bg: #0f172a;
+    --code-text: #38bdf8;
+    --table-stripe: #121826;
+    --success-color: #4ade80;
+    --danger-color: #f87171;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.6);
+
+    /* Material 3 System Mappings */
+    --md-sys-color-primary: #38bdf8;
+    --md-sys-color-on-primary: #0b0f19;
+    --md-sys-color-surface: #151c2c;
+    --md-sys-color-on-surface: #f8fafc;
+    --md-sys-color-outline: #64748b;
+    --md-sys-color-outline-variant: #334155;
+    --md-sys-color-error: #f87171;
+    --md-sys-color-on-error: #0b0f19;
+    --md-sys-color-background: #0b0f19;
+    --md-sys-color-on-background: #f8fafc;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    display: flex;
+    line-height: 1.5;
+    overflow-x: hidden;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Form Utility Classes */
+.eval-input, .eval-textarea, .eval-select {
+    width: 100%;
+    background: var(--input-bg);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    font-family: inherit;
+    font-size: 0.85rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.eval-input:focus, .eval-textarea:focus, .eval-select:focus {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+md-outlined-text-field::part(input) {
+    resize: none !important;
+}

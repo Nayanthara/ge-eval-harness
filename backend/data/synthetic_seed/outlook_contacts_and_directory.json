@@ -1,0 +1,128 @@
+{
+  "mailbox_owner": {
+    "name": "Alex Chen",
+    "email": "alex.chen@contoso.com",
+    "job_title": "Senior Cloud Solutions Architect",
+    "department": "Cloud Engineering",
+    "office_location": "One Manhattan West, 395 9th Avenue, 28th Floor, New York, NY 10001",
+    "manager": "Alex Mercer (alex.mercer@contoso.com)"
+  },
+  "total_contacts": 42,
+  "company_contacts_count": 36,
+  "contacts": [
+    {
+      "name": "Alex Mercer",
+      "email": "alex.mercer@contoso.com",
+      "title": "VP of Engineering",
+      "department": "Cloud Engineering",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 345-6789",
+      "location": "New York",
+      "reports_to": "Jennifer Walsh (CTO)",
+      "direct_reports": [
+        "Alex Chen",
+        "David Kim",
+        "Rachel Adams",
+        "Vikram Patel"
+      ],
+      "monthly_email_count": 38
+    },
+    {
+      "name": "Sarah Jenkins",
+      "email": "sarah.jenkins@contoso.com",
+      "title": "Director of HR & People Operations",
+      "department": "Human Resources",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 234-5678",
+      "phone_office": "+1 (555) 234-5679",
+      "location": "New York",
+      "notes": "Organizes annual benefits review and handles FMLA escalations.",
+      "last_meeting_sent": "Annual Benefits Review 2026"
+    },
+    {
+      "name": "Marcus Vance",
+      "email": "marcus.vance@contoso.com",
+      "title": "Lead Security Architect",
+      "department": "Information Security",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 876-5432",
+      "location": "New York",
+      "office": "Building A, Suite 410",
+      "monthly_email_count": 29,
+      "last_emailed": "2026-10-02T13:45:00Z"
+    },
+    {
+      "name": "Elena Rostova",
+      "email": "elena.rostova@contoso.com",
+      "title": "Director of Finance Operations",
+      "department": "Finance",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 987-6543",
+      "location": "New York",
+      "notes": "Primary contact for FY26 cloud infrastructure budget sign-off. Prefers communications before 11 AM EST. Executive sponsor for FinOps initiatives."
+    },
+    {
+      "name": "David Kim",
+      "email": "david.kim@contoso.com",
+      "title": "Senior DevOps Engineer",
+      "department": "Cloud Engineering",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 456-7890",
+      "location": "San Francisco",
+      "manager": "Alex Mercer",
+      "monthly_email_count": 24
+    },
+    {
+      "name": "Rachel Adams",
+      "email": "rachel.adams@contoso.com",
+      "title": "Cloud Site Reliability Engineer",
+      "department": "Cloud Engineering",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 678-9012",
+      "location": "New York",
+      "manager": "Alex Mercer"
+    },
+    {
+      "name": "Vikram Patel",
+      "email": "vikram.patel@contoso.com",
+      "title": "Kubernetes Specialist",
+      "department": "Cloud Engineering",
+      "company": "Contoso Technologies",
+      "phone_mobile": "+1 (555) 789-0123",
+      "location": "Austin",
+      "manager": "Alex Mercer"
+    },
+    {
+      "name": "Chloe Bennett",
+      "email": "chloe.bennett@contoso.com",
+      "title": "Product Designer",
+      "department": "Design",
+      "company": "Contoso Technologies",
+      "phone_mobile": null,
+      "location": "New York"
+    },
+    {
+      "name": "Liam O'Connor",
+      "email": "liam.oconnor@contoso.com",
+      "title": "Technical Writer",
+      "department": "Product Documentation",
+      "company": "Contoso Technologies",
+      "phone_mobile": null,
+      "location": "London"
+    },
+    {
+      "name": "Tom Sterling",
+      "email": "tom@sterlingconsult.com",
+      "title": "Former Vendor Lead",
+      "company": "Sterling Consulting",
+      "last_contacted": "2025-05-10"
+    },
+    {
+      "name": "Emily Watson",
+      "email": "emily.watson@agency-tech.io",
+      "title": "Contract QA Engineer",
+      "company": "Agency Tech Solutions",
+      "last_contacted": "2025-04-18"
+    }
+  ]
+}

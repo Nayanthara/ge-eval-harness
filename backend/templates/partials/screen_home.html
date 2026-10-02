@@ -1,0 +1,68 @@
+<!-- SCREEN 1: HOME (RUNS HISTORY MANAGER) -->
+<div id="screen-home" class="screen-content active">
+    <header>
+        <div>
+            <h1>GE Eval Harness</h1>
+        </div>
+    </header>
+
+    <div class="card">
+        <h2 style="font-family: var(--font-display); margin-bottom: 1.25rem;">Start New Evaluation Wizard</h2>
+        <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="startNewWizard('scratch')">➕ Start From Scratch</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('wizard-file-input').click()">📤 Import CSV Dataset</button>
+            <a href="/api/template/dataset" class="btn btn-secondary" id="btn-download-dataset-template-home" style="display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-size: 0.88rem;">
+                <span>📥</span>
+                <span>Download Blank Template</span>
+            </a>
+            <a href="/api/template/dataset/samples" class="btn btn-secondary" id="btn-download-dataset-samples-home" style="display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-size: 0.88rem;">
+                <span>📋</span>
+                <span>Download Template (with Samples)</span>
+            </a>
+            <input type="file" id="wizard-file-input" accept=".csv" style="display: none;" onchange="handleWizardCSVUpload(this.files)">
+            <span style="color: var(--text-sub); font-size: 0.9rem;">
+                🔄 To duplicate and edit a previous active run, click the <b>Edit & Re-run</b> button for the appropriate run in the history table below.
+            </span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 style="font-family: var(--font-display); margin-bottom: 1rem;">Eval Run History</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Run ID</th>
+                        <th>Timestamp</th>
+                        <th>Model(s)</th>
+                        <th>Instructions</th>
+                        <th style="text-align: center;">Samples</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="runs-history-body">
+                    <tr><td colspan="7" style="text-align: center; color: var(--text-sub);">Loading historical evaluation runs...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div id="runs-pagination-controls" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; font-size: 0.9rem; color: var(--text-sub);">
+            <div>
+                Show 
+                <select id="runs-per-page-select" onchange="changeRunsPerPage(this.value)" style="background: var(--input-bg); border: 1px solid var(--input-border); color: var(--input-text); padding: 0.25rem 0.5rem; border-radius: 6px; outline: none; cursor: pointer;">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                per page
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button id="runs-prev-page-btn" onclick="prevRunsPage()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">◀ Previous</button>
+                <span id="runs-page-info">Page 1 of 1</span>
+                <button id="runs-next-page-btn" onclick="nextRunsPage()" class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.85rem;">Next ▶</button>
+            </div>
+        </div>
+    </div>
+</div>

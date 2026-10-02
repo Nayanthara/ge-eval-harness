@@ -1,0 +1,17 @@
+<!-- SCREEN 2: EVAL DATASET EDITOR (WIZARD STEP 1) -->
+<div id="screen-dataset-editor" class="screen-content">
+    <header>
+        <div>
+            <h1 id="dataset-editor-title">Dataset Scenario Editor</h1>
+            <div class="subtitle" id="dataset-editor-subtitle">Step 1 of 2: Design and Refine Matrix Evaluation Queries</div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-secondary" onclick="cancelDatasetEditor()">Cancel</button>
+            <button class="btn btn-secondary" id="btn-dataset-editor-save-repo" onclick="openSaveDatasetAsModal()" style="display: inline-flex; align-items: center; gap: 0.35rem;">💾 Add to Repository</button>
+            <button class="btn" id="btn-dataset-editor-next" onclick="goToWizardStep2()">Next: Configure Parameters ➡️</button>
+            <button class="btn" id="btn-dataset-editor-save" style="display: none;" onclick="saveDatasetEditor()">💾 Save Dataset</button>
+        </div>
+    </header>
+
+    <dataset-editor id="dataset-editor"></dataset-editor>
+</div>

@@ -1,0 +1,201 @@
+<!-- Modal: StreamAssist & Parallel Connector Test Bed -->
+<div id="modal-testbed" class="modal" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 10000; align-items: center; justify-content: center; backdrop-filter: blur(4px);">
+    <div class="modal-content" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; max-width: 1150px; width: 95%; max-height: 92vh; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); overflow: hidden;">
+        
+        <!-- Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-color); background: var(--bg-card-secondary);">
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <span style="font-size: 1.5rem;">⚡</span>
+                <div>
+                    <h3 style="margin: 0; font-size: 1.15rem; font-weight: 700; color: var(--text-main);">Gemini Enterprise streamAssist Parallel Test Bed</h3>
+                    <div style="font-size: 0.76rem; color: var(--text-sub);">Dispatches parallel streamAssist document reads & agent tool invocations across live connectors.</div>
+                </div>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="closeTestbedModal()" style="padding: 0.3rem 0.6rem; font-size: 1rem; border-radius: 6px;" title="Close Test Bed">✕</button>
+        </div>
+
+        <!-- Body Scrollable Area -->
+        <div style="padding: 1.25rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1.1rem;">
+            
+            <!-- Config & Inputs Section -->
+            <div style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1rem; display: flex; flex-direction: column; gap: 0.85rem;">
+                
+                <!-- Engine Mode & Presets Row -->
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem;">
+                        <span style="font-size: 0.78rem; font-weight: 700; color: var(--text-sub); text-transform: uppercase;">Engine Mode:</span>
+                        <label style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--accent-primary);">
+                            <input type="radio" name="testbed-engine-radio" value="stream_assist" checked onchange="toggleTestbedEngineMode()">
+                            <span>⚡ streamAssist (Agentic Reader)</span>
+                        </label>
+                        <label style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; color: var(--text-sub);">
+                            <input type="radio" name="testbed-engine-radio" value="search" onchange="toggleTestbedEngineMode()">
+                            <span>🔍 DataStore Search</span>
+                        </label>
+                    </div>
+
+                    <!-- Quick Fill Presets -->
+                    <div style="display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center;">
+                        <span style="font-size: 0.72rem; color: var(--text-sub); font-weight: 600; margin-right: 0.2rem;">PRESETS:</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('all_connectors_corpus')" style="font-size: 0.72rem; padding: 0.2rem 0.55rem; border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.1); color: #818cf8;">
+                            🌟 All Connectors (11 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('google_docs')" style="font-size: 0.72rem; padding: 0.2rem 0.55rem;">
+                            📄 Google Docs & Drive
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('jira_tickets')" style="font-size: 0.72rem; padding: 0.2rem 0.55rem;">
+                            🎫 Jira Tickets (3 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('confluence_guides')" style="font-size: 0.72rem; padding: 0.2rem 0.55rem;">
+                            📘 Confluence Guides (3 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('lumapps_posts')" style="font-size: 0.72rem; padding: 0.2rem 0.55rem;">
+                            📰 LumApps Intranet (2 Docs)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input Grid -->
+                <div style="display: grid; grid-template-columns: 1.25fr 1fr; gap: 1rem;">
+                    
+                    <!-- Left: Target Links / Document URIs -->
+                    <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                        <label for="testbed-targets-input" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main); display: flex; justify-content: space-between;">
+                            <span>Target Document Links / URIs / IDs:</span>
+                            <span style="font-size: 0.72rem; color: var(--text-sub); font-weight: normal;">(One link per line)</span>
+                        </label>
+                        <textarea id="testbed-targets-input" rows="8" style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.55rem; color: var(--text-main); font-family: monospace; font-size: 0.78rem; resize: vertical;">https://drive.google.com/a/thomascummins.altostrat.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO
+https://docs.google.com/document/d/1HuXh4xdln-MFlZRBWyeToSgDLDI0j524UsmL4yDlj_4/edit?usp=sharing
+https://drive.google.com/open?id=1V5c9f9PWY3RZQWhNjkJfbNlab_1Gp01e
+gs://tc-vertex-search-experiments/jira-ds/JIRA-102_vpn_access_denied.txt
+gs://tc-vertex-search-experiments/jira-ds/JIRA-101_broken_keyboard.txt
+gs://tc-vertex-search-experiments/jira-ds/JIRA-103_slack_workspace_access.txt
+gs://tc-vertex-search-experiments/confluence-ds/it_vpn_setup_guide.html
+gs://tc-vertex-search-experiments/confluence-ds/office_wifi_and_printing.html
+gs://tc-vertex-search-experiments/confluence-ds/laptop_replacement_policy.html
+gs://yahoo-lumapps-mock-bucket-tc/post-1.html
+gs://yahoo-lumapps-mock-bucket-tc/post-2.html</textarea>
+                    </div>
+
+                    <!-- Right: Scenario Query & Agent Options -->
+                    <div style="display: flex; flex-direction: column; gap: 0.65rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.3rem;">
+                            <label for="testbed-query-input" style="font-size: 0.8rem; font-weight: 600; color: var(--text-main);">
+                                Scenario Query / Instruction (Optional):
+                            </label>
+                            <input type="text" id="testbed-query-input" value="Read the document and summarize the key instructions, facts, and guidelines." style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.45rem 0.65rem; color: var(--text-main); font-size: 0.8rem;">
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label for="testbed-model-select" style="font-size: 0.74rem; font-weight: 600; color: var(--text-sub);">Model:</label>
+                                <select id="testbed-model-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; color: var(--text-main); font-size: 0.76rem;">
+                                    <option value="gemini-3.5-flash">Gemini 3.5 Flash</option>
+                                    <option value="gemini-3.1-pro-preview">Gemini 3.1 Pro</option>
+                                    <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label for="testbed-agent-select" style="font-size: 0.74rem; font-weight: 600; color: var(--text-sub);">Search Mode:</label>
+                                <select id="testbed-search-mode-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; color: var(--text-main); font-size: 0.76rem;">
+                                    <option value="Agentic">Agentic (StreamAssist)</option>
+                                    <option value="Vector">Vector (Direct Index)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="testbed-datastore-scope-container" style="display: none; flex-direction: column; gap: 0.25rem;">
+                            <label for="testbed-connector-select" style="font-size: 0.74rem; font-weight: 600; color: var(--text-sub);">DataStore Filter (Search Mode):</label>
+                            <select id="testbed-connector-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.4rem; color: var(--text-main); font-size: 0.76rem;">
+                                <option value="all">⚡ All Engine DataStores in Parallel</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Toolbar -->
+                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.4rem; border-top: 1px solid var(--border-color);">
+                    <div id="testbed-status-indicator" style="font-size: 0.8rem; color: var(--text-sub); display: flex; align-items: center; gap: 0.4rem;">
+                        <span>Ready to execute parallel streamAssist audit.</span>
+                    </div>
+                    <div style="display: flex; gap: 0.6rem;">
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="clearTestbedInputs()" style="padding: 0.4rem 0.85rem; font-size: 0.82rem;">
+                            🗑️ Clear
+                        </button>
+                        <button type="button" id="testbed-run-btn" class="btn btn-primary btn-sm" onclick="runParallelTestbed()" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.4rem 1.25rem; font-size: 0.85rem; background: linear-gradient(135deg, #6366f1, #8b5cf6); border: none; font-weight: 600;">
+                            <span>🚀</span> <span>Run Parallel Audit</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Output Container -->
+            <div id="testbed-results-container" style="display: none; flex-direction: column; gap: 1rem;">
+                
+                <!-- KPI Overview Bar -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; text-align: center;">
+                        <div style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">Targets Audited</div>
+                        <div id="testbed-kpi-targets" style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-top: 0.2rem;">0</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; text-align: center;">
+                        <div style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">Grounded Documents</div>
+                        <div id="testbed-kpi-grounded" style="font-size: 1.3rem; font-weight: 700; color: #8b5cf6; margin-top: 0.2rem;">0</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; text-align: center;">
+                        <div style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">Avg TTLT Latency</div>
+                        <div id="testbed-kpi-avg-latency" style="font-size: 1.3rem; font-weight: 700; color: var(--accent-primary); margin-top: 0.2rem;">0.0s</div>
+                    </div>
+                    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem; text-align: center;">
+                        <div style="font-size: 0.7rem; color: var(--text-sub); text-transform: uppercase;">Total Wall Time</div>
+                        <div id="testbed-kpi-total-time" style="font-size: 1.3rem; font-weight: 700; color: var(--success-color); margin-top: 0.2rem;">0 ms</div>
+                    </div>
+                </div>
+
+                <!-- StreamAssist Target Results Cards -->
+                <div id="testbed-target-cards" style="display: flex; flex-direction: column; gap: 0.85rem;"></div>
+
+                <!-- Waterfall Table Container (when in search mode or table view) -->
+                <div id="testbed-waterfall-panel" style="display: none; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; flex-direction: column; gap: 0.6rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 0.82rem; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 0.4rem;">
+                            <span>📊</span> <span>Probe Waterfall Table</span>
+                        </div>
+                        <input type="text" id="testbed-table-search" placeholder="Filter probes..." oninput="filterTestbedWaterfallTable()" style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 4px; padding: 0.2rem 0.5rem; font-size: 0.72rem; color: var(--text-main); width: 140px;">
+                    </div>
+                    <div style="max-height: 280px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px;">
+                        <table id="testbed-waterfall-table" style="width: 100%; border-collapse: collapse; font-size: 0.72rem; text-align: left;">
+                            <thead>
+                                <tr style="background: var(--bg-card-secondary); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 2;">
+                                    <th style="padding: 0.4rem 0.5rem;">#</th>
+                                    <th style="padding: 0.4rem 0.5rem;">Connector & DataStore</th>
+                                    <th style="padding: 0.4rem 0.5rem;">Query Evaluated</th>
+                                    <th style="padding: 0.4rem 0.5rem;">HTTP Status</th>
+                                    <th style="padding: 0.4rem 0.5rem;">Latency</th>
+                                    <th style="padding: 0.4rem 0.5rem;">Results</th>
+                                    <th style="padding: 0.4rem 0.5rem;">Match Verdict</th>
+                                </tr>
+                            </thead>
+                            <tbody id="testbed-waterfall-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Raw JSON Telemetry Container (collapsible) -->
+                <div style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="toggleTestbedRawJson()" style="font-size: 0.72rem; padding: 0.25rem 0.65rem;">
+                        🔍 View Full Raw Telemetry JSON Trace
+                    </button>
+                </div>
+                <div id="testbed-raw-json-panel" style="display: none; background: #0f172a; border: 1px solid var(--border-color); border-radius: 8px; padding: 0.85rem; font-family: monospace; font-size: 0.74rem; color: #e2e8f0; max-height: 300px; overflow-y: auto; white-space: pre-wrap;"></div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div style="display: flex; justify-content: flex-end; padding: 0.75rem 1.25rem; border-top: 1px solid var(--border-color); background: var(--bg-card-secondary);">
+            <button class="btn btn-secondary btn-sm" onclick="closeTestbedModal()" style="padding: 0.35rem 1rem;">Close</button>
+        </div>
+
+    </div>
+</div>

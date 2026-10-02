@@ -1,0 +1,142 @@
+[
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "Standardize using uv/venv, internal Artifactory mirror (artifactory.yahoo.com), pytest, and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "how_to_use_python_at_yahoo.md"
+  },
+  {
+    "query": "How do TLS certs work?",
+    "ground_truth": "Authentication and encryption via Certificate Authority (CA) digital signatures and TLS handshake.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "how_to_check_tls_cert.md"
+  },
+  {
+    "query": "What are the Pre-Onboarding Checklist steps for konaplus user onboarding?",
+    "ground_truth": "1. Submit IdentityIQ ticket for KonaPlus-User-Role. 2. Join #konaplus-users Slack. 3. Generate API key via yo/konaplus-onboard.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1rvsGPeDS5OS92dSBG2In7HjfqWaV3PPq"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "user_onboarding_yo_konaplus_onboard.md"
+  },
+  {
+    "query": "what are the steps to mount a zip file as a volume?",
+    "ground_truth": "Ensure zip archive is on shared storage and run fuse-zip -r /path/to/archive.zip /mnt/target_volume.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xnruO_4OGmyCjqvi8A1QWyrLEo0BMljN"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "mounting_a_zip_file_as_a_volume.md"
+  },
+  {
+    "query": "What's the onboarding process for Claude?",
+    "ground_truth": "Request IdentityIQ group EITAI-Claude-Users, access via internal AI gateway, and join #eitai-announcements.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1V5c9f9PWY3RZQWhNjkJfbNlab_1Gp01e"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "claude_onboarding_process.md"
+  },
+  {
+    "query": "Give me a list of all of my EITAI tickets that have status In Progress",
+    "ground_truth": "EITAI-1466, EITAI-1417, EITAI-1377, and EITAI-1235.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10LnLzfSfDTCSt0uQgN-OHb7yphYDL-Fa"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "eitai_in_progress_tickets.md"
+  },
+  {
+    "query": "how many EITAI tickets in the AI development Kanban board are assigned to Gary Yeung that have status Ready for Acceptance?",
+    "ground_truth": "1 ticket (EITAI-1365).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xeskKBo8s3T6GmBQugCSs4I-k1Hu8K9m"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "eitai_ready_for_acceptance_gary_yeung.md"
+  },
+  {
+    "query": "how much is the wellness stipend?",
+    "ground_truth": "$150 per month.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "wellness_stipend_reimbursement.md"
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "Full-time employees receive PTO/FTO with up to 5 days rollover into the following calendar year.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "global_time_off_page.md"
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "In Workday under Manager Self-Service, submit Contingent Worker Extension at least 14 business days prior to expiration (18-month tenure limit).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1hmGqbgWxK9u0IpAqZJIpURzEjPPTsq00"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "contingent_worker_extension.md"
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Work@Yahoo policy requires disclosing work outside resident location if working 14 or more days in a calendar year via Workday attestation.",
+    "expected_source": [
+      "https://drive.google.com/open?id=15STc5gr07FuChtiZ5xrmqOtB99DXQVLk"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "work_from_abroad_policy.md"
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "Sunnyvale HQ (Bldg E 1st floor 8am-5pm PT), NY Times Square (6th floor 9am-5pm ET), Dublin (3rd floor 9am-4:30pm IST).",
+    "expected_source": [
+      "https://drive.google.com/open?id=13N44VqHee46G9uSsKgI09MueaYlUZh2s"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "gsd_walkup_windows_locations_and_hours.md"
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "Second Thursday of each month at 10am PT / 1pm ET. Official Slack channel is #openhouse-official. Link on TheStreet is yo/thestreet.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1mkx36voGKrMn-evuFZrablXO99sIk-PC"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "community_open_house.md"
+  },
+  {
+    "query": "when is the next company US holiday?",
+    "ground_truth": "Official US holidays include MLK Day, Memorial Day, Juneteenth, July 4th, Labor Day, Thanksgiving, and Christmas.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "global_time_off_page.md"
+  }
+]

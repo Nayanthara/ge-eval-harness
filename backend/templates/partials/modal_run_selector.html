@@ -1,0 +1,83 @@
+<!-- SEARCHABLE RUN SELECTOR & FILTER MODAL -->
+<div id="modal-run-selector" style="display: none; position: fixed; inset: 0; background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(6px); z-index: 99999; align-items: center; justify-content: center; padding: 2rem;">
+    <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 18px; width: 100%; max-width: 1120px; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 20px 60px rgba(0,0,0,0.5); overflow: hidden;">
+        <!-- Modal Header -->
+        <div style="padding: 1.25rem 2rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: var(--bg-card-secondary);">
+            <div>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span style="font-size: 1.4rem;">🔍</span>
+                    <h3 id="run-selector-modal-title" style="margin: 0; font-family: var(--font-display); font-size: 1.25rem; color: var(--text-main);">Browse & Filter Evaluation Runs</h3>
+                </div>
+                <div id="run-selector-modal-subtitle" style="font-size: 0.84rem; color: var(--text-sub); margin-top: 0.25rem;">
+                    Search across historical benchmarks, filter by status or date, and inspect execution telemetry
+                </div>
+            </div>
+            <button class="btn btn-secondary" onclick="closeRunSelectorModal()" style="font-size: 0.84rem; padding: 0.4rem 0.85rem;">✕ Close</button>
+        </div>
+
+        <!-- Search & Filters Toolbar -->
+        <div style="padding: 1.15rem 2rem; background: var(--bg-card); border-bottom: 1px solid var(--border-color); display: flex; flex-direction: column; gap: 0.85rem;">
+            <div style="position: relative;">
+                <input type="text" 
+                       id="run-modal-search-input" 
+                       oninput="filterRunsModal()" 
+                       placeholder="Search by Run ID, dataset key, model name (e.g. flash, pro), status..." 
+                       style="width: 100%; background: var(--bg-card-secondary); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.6rem 1rem 0.6rem 2.35rem; border-radius: 8px; font-size: 0.9rem; outline: none; box-sizing: border-box;">
+                <span style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); font-size: 0.95rem; color: var(--text-sub);">🔍</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.85rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;" id="run-modal-status-filters">
+                    <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-sub); text-transform: uppercase;">Status:</span>
+                    <button class="filter-chip active" onclick="setRunModalStatusFilter('all', this)">All</button>
+                    <button class="filter-chip" onclick="setRunModalStatusFilter('completed', this)">Completed</button>
+                    <button class="filter-chip" onclick="setRunModalStatusFilter('running', this)">Running</button>
+                    <button class="filter-chip" onclick="setRunModalStatusFilter('failed', this)">Failed</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;" id="run-modal-date-filters">
+                    <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-sub); text-transform: uppercase;">Date:</span>
+                    <button class="filter-chip active" onclick="setRunModalDateFilter('all', this)">All Time</button>
+                    <button class="filter-chip" onclick="setRunModalDateFilter('today', this)">Today</button>
+                    <button class="filter-chip" onclick="setRunModalDateFilter('7days', this)">Last 7 Days</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; background: var(--bg-card-secondary); padding: 0.35rem 0.75rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    <span style="font-size: 0.78rem; font-weight: 600; color: var(--text-sub); display: flex; align-items: center; gap: 0.35rem; cursor: pointer;" onclick="try { document.getElementById('run-modal-single-date').showPicker(); } catch(e){}">
+                        <span>📅</span>
+                        <span>Date:</span>
+                    </span>
+                    <input type="date" 
+                           id="run-modal-single-date" 
+                           onchange="onRunModalSingleDateChange()" 
+                           onclick="try { this.showPicker(); } catch(e){}"
+                           style="background: var(--input-bg, #0f172a); border: 1px solid var(--border-color); color: var(--text-main, #f8fafc); padding: 0.25rem 0.6rem; border-radius: 6px; font-size: 0.82rem; outline: none; color-scheme: dark; cursor: pointer;" 
+                           title="Click to select a specific date">
+                    <button class="btn btn-secondary btn-sm" onclick="clearRunModalDateFilter()" style="font-size: 0.74rem; padding: 0.2rem 0.55rem; border-radius: 6px;" title="Reset date filter">Clear</button>
+                </div>
+                <span id="run-modal-count-label" style="font-size: 0.78rem; color: var(--text-sub);">Showing runs...</span>
+            </div>
+        </div>
+
+        <!-- Runs Table Container (Scrollable) -->
+        <div style="flex: 1; overflow-y: auto; background: var(--bg-card);">
+            <table style="width: 100%; font-size: 0.86rem; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; color: var(--text-sub); border-bottom: 1px solid var(--border-color); background: var(--bg-card-secondary); position: sticky; top: 0; z-index: 10;">
+                        <th style="padding: 0.75rem 1.15rem; width: 22%;">Run ID</th>
+                        <th style="padding: 0.75rem 0.85rem; width: 18%;">Timestamp</th>
+                        <th style="padding: 0.75rem 0.85rem; width: 25%;">Dataset & Matrix</th>
+                        <th style="padding: 0.75rem 0.85rem; width: 13%;">Status</th>
+                        <th style="padding: 0.75rem 0.85rem; width: 12%;">Accuracy / TTLT</th>
+                        <th style="padding: 0.75rem 1.15rem; width: 10%; text-align: right;">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="run-modal-table-body">
+                    <!-- Populated dynamically via renderRunsModalTable -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Modal Footer -->
+        <div style="padding: 1rem 2rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; background: var(--bg-card-secondary);">
+            <button class="btn btn-secondary" onclick="closeRunSelectorModal()" style="font-size: 0.84rem; padding: 0.45rem 1.15rem;">Close</button>
+        </div>
+    </div>
+</div>

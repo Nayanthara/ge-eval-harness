@@ -1,0 +1,14 @@
+[
+  {
+    "query": "What are Yahoo's Day 1 onboarding requirements, annual PTO and rollover allowances, and the monthly wellness stipend for full-time employees?",
+    "ground_truth": "1. Day 1 Onboarding Requirements: Complete security training and request system hardware permissions (Onboarding Guide).\n2. PTO & Rollover Allowances: Full-time employees receive 25 days of Paid Time Off (PTO) per calendar year, 5 floating holidays, and can roll over a maximum of 5 unused PTO days per year with excess expiring Dec 31 (Yahoo Employee Handbook).\n3. Wellness Stipend: Full-time employees receive a $150 per month wellness stipend for gym or fitness classes (Benefits Summary).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6",
+      "https://drive.google.com/open?id=19L5YCsfAMd-6xdHyj2GkbPfP4807Xoj9",
+      "https://drive.google.com/open?id=1d-CeAzUwJtGfWnY5KwbbG_UaDjWxhLZe"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6 | https://drive.google.com/open?id=19L5YCsfAMd-6xdHyj2GkbPfP4807Xoj9 | https://drive.google.com/open?id=1d-CeAzUwJtGfWnY5KwbbG_UaDjWxhLZe"
+  }
+]

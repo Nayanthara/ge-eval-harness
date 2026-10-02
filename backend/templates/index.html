@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GE Eval Harness</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="/static/marked.min.js?v={{ v or '4' }}"></script>
+    <script type="module" src="/static/dist/eval-harness-bundle.js?v={{ v or '4' }}"></script>
+
+    <!-- Modular CSS Stylesheets -->
+    <link rel="stylesheet" href="/static/css/themes.css?v={{ v or '4' }}">
+    <link rel="stylesheet" href="/static/css/layout.css?v={{ v or '4' }}">
+    <link rel="stylesheet" href="/static/css/components.css?v={{ v or '4' }}">
+    <link rel="stylesheet" href="/static/css/trace-inspector.css?v={{ v or '4' }}">
+</head>
+<body>
+    <!-- Collapsible Sidebar Navigation Component -->
+    <harness-app class="sidebar" id="sidebar"></harness-app>
+
+    <!-- Main Screens Content Wrapper -->
+    <div class="main-content">
+        {% include 'partials/top_nav_bar.html' %}
+        {% include 'partials/screen_home.html' %}
+        {% include 'partials/screen_dataset_editor.html' %}
+        {% include 'partials/screen_run_config.html' %}
+        {% include 'partials/screen_run_status.html' %}
+        {% include 'partials/screen_datasets.html' %}
+        {% include 'partials/screen_dataset_viewer.html' %}
+        {% include 'partials/screen_settings.html' %}
+        {% include 'partials/screen_results.html' %}
+        {% include 'partials/legacy_hidden_elements.html' %}
+    </div>
+
+    <!-- Modals & Floating Dialogs -->
+    {% include 'partials/modal_trace_inspector.html' %}
+    {% include 'partials/modal_manage_sources.html' %}
+    {% include 'partials/modal_testbed.html' %}
+    {% include 'partials/modal_run_selector.html' %}
+    {% include 'partials/modal_help_dialog.html' %}
+    {% include 'partials/modal_save_dataset_as.html' %}
+    {% include 'partials/modal_export_dataset.html' %}
+
+    <!-- Modular JavaScript Applications -->
+    <script src="/static/js/utils.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/theme.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/state.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/help-modal.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/action-panel.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/testbed.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/run-browser.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/dataset-manager.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/results-view.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/run-status.js?v={{ v or '12' }}"></script>
+    <script src="/static/js/trace-inspector.js?v={{ v or '12' }}"></script>
+    <script>
+        // Auto-initialize theme, environment sysinfo, and hash route on startup
+        if (typeof initTheme === 'function') initTheme();
+        if (typeof loadSettingsSysinfo === 'function') loadSettingsSysinfo();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                if (typeof loadSettingsSysinfo === 'function') loadSettingsSysinfo();
+                if (typeof parseHashAndSwitch === 'function') parseHashAndSwitch();
+            });
+        } else {
+            if (typeof parseHashAndSwitch === 'function') parseHashAndSwitch();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel Connector Test Bed - Yahoo Gemini Enterprise</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="/static/marked.min.js?v={{ v or '8' }}"></script>
+
+    <!-- Modular CSS Stylesheets -->
+    <link rel="stylesheet" href="/static/css/themes.css?v={{ v or '8' }}">
+    <link rel="stylesheet" href="/static/css/layout.css?v={{ v or '8' }}">
+    <link rel="stylesheet" href="/static/css/components.css?v={{ v or '8' }}">
+    <link rel="stylesheet" href="/static/css/trace-inspector.css?v={{ v or '8' }}">
+</head>
+<body style="min-height: 100vh; background: var(--bg-main); color: var(--text-main); font-family: 'Inter', sans-serif;">
+    
+    <div style="max-width: 1380px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <!-- Standalone Navigation Header -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 0.85rem; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; gap: 0.75rem;">
+            <div style="display: flex; align-items: center; gap: 0.85rem;">
+                <a href="/" class="btn btn-secondary btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.35rem 0.75rem; border-radius: 6px; font-weight: 600; color: var(--accent-primary);">
+                    <span>←</span> <span>Evaluation Dashboard</span>
+                </a>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-size: 1.4rem;">⚡</span>
+                    <div>
+                        <h1 style="margin: 0; font-size: 1.2rem; font-weight: 700; color: var(--text-main); font-family: 'Outfit', sans-serif;">Parallel Connector Test Bed</h1>
+                        <span style="font-size: 0.76rem; color: var(--text-sub);">Direct streamAssist live agentic document reader & multi-connector execution inspector</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <button id="theme-toggle-btn" class="btn btn-secondary btn-sm" onclick="toggleTheme()" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s;" title="Toggle Light / Dark Mode">
+                    <span id="theme-toggle-icon">🌙</span>
+                    <span id="theme-toggle-label">Dark Mode</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Test Bed Card Container -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.35rem; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); display: flex; flex-direction: column; gap: 1.2rem;">
+            
+            <!-- Controls & Preset Toolbar -->
+            <div style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.1rem; display: flex; flex-direction: column; gap: 1rem;">
+                
+                <!-- Engine Mode & Presets Row -->
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.85rem;">
+                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px;">Engine Mode:</span>
+                        <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.84rem; font-weight: 700; cursor: pointer; color: var(--accent-primary); background: rgba(59, 130, 246, 0.1); padding: 0.25rem 0.6rem; border-radius: 6px; border: 1px solid rgba(59, 130, 246, 0.3);">
+                            <input type="radio" name="testbed-engine-radio" value="stream_assist" checked onchange="toggleTestbedEngineMode()">
+                            <span>⚡ streamAssist (Agentic Reader)</span>
+                        </label>
+                        <label style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.84rem; font-weight: 600; cursor: pointer; color: var(--text-sub);">
+                            <input type="radio" name="testbed-engine-radio" value="search" onchange="toggleTestbedEngineMode()">
+                            <span>🔍 DataStore Search</span>
+                        </label>
+                    </div>
+
+                    <!-- Quick Fill Presets -->
+                    <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; align-items: center;">
+                        <span style="font-size: 0.74rem; color: var(--text-sub); font-weight: 700; margin-right: 0.2rem;">PRESETS:</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('all_connectors_corpus')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem; border-color: rgba(99, 102, 241, 0.4); background: rgba(99, 102, 241, 0.12); color: #818cf8; font-weight: 600;">
+                            🌟 All Connectors (11 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('google_docs')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem; font-weight: 600;">
+                            📄 Google Docs & Drive
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('jira_tickets')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem; font-weight: 600;">
+                            🎫 Jira Tickets (3 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('confluence_guides')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem; font-weight: 600;">
+                            📘 Confluence Guides (3 Docs)
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="applyTestbedPreset('lumapps_posts')" style="font-size: 0.74rem; padding: 0.25rem 0.6rem; font-weight: 600;">
+                            📰 LumApps Intranet (2 Docs)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Input Grid -->
+                <div style="display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.25rem;">
+                    
+                    <!-- Left: Target Links / Document URIs -->
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                        <label for="testbed-targets-input" style="font-size: 0.82rem; font-weight: 700; color: var(--text-main); display: flex; justify-content: space-between;">
+                            <span>Target Document Links / URIs / IDs:</span>
+                            <span style="font-size: 0.72rem; color: var(--text-sub); font-weight: normal;">(One link per line)</span>
+                        </label>
+                        <textarea id="testbed-targets-input" rows="8" style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.65rem; color: var(--text-main); font-family: monospace; font-size: 0.8rem; resize: vertical; line-height: 1.45;">https://drive.google.com/a/thomascummins.altostrat.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO
+https://docs.google.com/document/d/1HuXh4xdln-MFlZRBWyeToSgDLDI0j524UsmL4yDlj_4/edit?usp=sharing
+https://drive.google.com/open?id=1V5c9f9PWY3RZQWhNjkJfbNlab_1Gp01e
+gs://tc-vertex-search-experiments/jira-ds/JIRA-102_vpn_access_denied.txt
+gs://tc-vertex-search-experiments/jira-ds/JIRA-101_broken_keyboard.txt
+gs://tc-vertex-search-experiments/jira-ds/JIRA-103_slack_workspace_access.txt
+gs://tc-vertex-search-experiments/confluence-ds/it_vpn_setup_guide.html
+gs://tc-vertex-search-experiments/confluence-ds/office_wifi_and_printing.html
+gs://tc-vertex-search-experiments/confluence-ds/laptop_replacement_policy.html
+gs://yahoo-lumapps-mock-bucket-tc/post-1.html
+gs://yahoo-lumapps-mock-bucket-tc/post-2.html</textarea>
+                    </div>
+
+                    <!-- Right: Scenario Query & Agent Options -->
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.35rem;">
+                            <label for="testbed-query-input" style="font-size: 0.82rem; font-weight: 700; color: var(--text-main);">
+                                Scenario Query / Instruction (Optional):
+                            </label>
+                            <input type="text" id="testbed-query-input" value="Read the document and summarize the key instructions, facts, and guidelines." style="width: 100%; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.55rem 0.75rem; color: var(--text-main); font-size: 0.82rem;">
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem;">
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label for="testbed-model-select" style="font-size: 0.76rem; font-weight: 700; color: var(--text-sub);">Model:</label>
+                                <select id="testbed-model-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.45rem; color: var(--text-main); font-size: 0.78rem;">
+                                    <option value="gemini-3.5-flash">⚡ Gemini 3.5 Flash</option>
+                                    <option value="gemini-3.1-pro-preview">🧠 Gemini 3.1 Pro</option>
+                                    <option value="gemini-2.5-flash">⚡ Gemini 2.5 Flash</option>
+                                </select>
+                            </div>
+                            <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                                <label for="testbed-search-mode-select" style="font-size: 0.76rem; font-weight: 700; color: var(--text-sub);">Search Mode:</label>
+                                <select id="testbed-search-mode-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.45rem; color: var(--text-main); font-size: 0.78rem;">
+                                    <option value="Agentic">🤖 Agentic (Connector Tools)</option>
+                                    <option value="Direct">⚡ Direct (streamAssist)</option>
+                                    <option value="Vector">🔍 Vector Search</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- DataStore Filter for Search Mode -->
+                        <div id="testbed-datastore-scope-container" style="display: none; flex-direction: column; gap: 0.25rem;">
+                            <label for="testbed-connector-select" style="font-size: 0.76rem; font-weight: 700; color: var(--text-sub);">Connector DataStores:</label>
+                            <select id="testbed-connector-select" style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.45rem; color: var(--text-main); font-size: 0.78rem;">
+                                <option value="all">⚡ All Discovered Engine DataStores (Parallel)</option>
+                            </select>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div style="margin-top: auto; display: flex; gap: 0.5rem; justify-content: flex-end;">
+                            <button id="btn-run-testbed" type="button" class="btn btn-primary" onclick="runParallelConnectorTestbed()" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.4rem; font-size: 0.88rem; font-weight: 700; border-radius: 6px; background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);">
+                                <span id="btn-run-testbed-icon">🚀</span>
+                                <span id="btn-run-testbed-text">Run Parallel Test Bed</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-time Progress Bar -->
+            <div id="testbed-progress-container" style="display: none; background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; align-items: center; justify-content: space-between; gap: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.65rem; flex: 1;">
+                    <span id="testbed-spinner" class="spinner-small"></span>
+                    <span id="testbed-status-text" style="font-size: 0.84rem; font-weight: 600; color: var(--text-main);">Dispatching parallel requests...</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <span id="testbed-metrics-badge" class="badge" style="font-size: 0.76rem; background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.25rem 0.6rem;">0/0 Completed</span>
+                </div>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="testbed-error-banner" style="display: none; background: rgba(239, 68, 68, 0.12); border: 1px solid #ef4444; border-radius: 8px; padding: 0.75rem 1rem; color: #fca5a5; font-size: 0.82rem;">
+                <b>Execution Error:</b> <span id="testbed-error-text">An error occurred during test bed execution.</span>
+            </div>
+
+            <!-- Parallel Results Explorer -->
+            <div id="testbed-results-wrapper" style="display: none; flex-direction: column; gap: 1rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h4 style="margin: 0; font-size: 0.95rem; font-weight: 700; color: var(--text-main);">Target Execution Results</h4>
+                        <span id="testbed-summary-pill" class="badge badge-pass" style="font-size: 0.72rem;">0 of 0 Accessible</span>
+                    </div>
+                    <span id="testbed-total-duration-label" style="font-size: 0.78rem; font-family: monospace; color: var(--text-sub);">Elapsed: 0.0s</span>
+                </div>
+
+                <div id="testbed-cards-grid" style="display: flex; flex-direction: column; gap: 0.85rem;">
+                    <!-- Result cards dynamically inserted here -->
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modular JavaScript Applications -->
+    <script src="/static/js/utils.js?v={{ v or '8' }}"></script>
+    <script src="/static/js/theme.js?v={{ v or '8' }}"></script>
+    <script src="/static/js/testbed.js?v={{ v or '8' }}"></script>
+    <script>
+        if (typeof initTheme === 'function') initTheme();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                if (typeof loadTestbedDataStores === 'function') loadTestbedDataStores();
+            });
+        } else {
+            if (typeof loadTestbedDataStores === 'function') loadTestbedDataStores();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+digraph TraceInjection {
+    rankdir=LR;
+    node [shape=box, style="rounded,filled", fontname="Inter, Roboto, sans-serif"];
+    edge [fontname="Inter, Roboto, sans-serif"];
+
+    // Nodes
+    ClientScript [label="Python Test Script\n(test_trace_injection.py)", fillcolor="#e8f0fe", color="#4285f4"];
+    StreamAssistAPI [label="StreamAssist API\n(Gemini Enterprise)", fillcolor="#e6f4ea", color="#34a853"];
+    GCPTrace [label="Google Cloud Trace\n& Logging", fillcolor="#fef7e0", color="#fbbc04"];
+    LogScript [label="Shell Log Script\n(get_trace_logs.sh)", fillcolor="#e8f0fe", color="#4285f4"];
+
+    // Edges
+    ClientScript -> StreamAssistAPI [label="1. Call with\ntraceparent header", color="#4285f4"];
+    StreamAssistAPI -> GCPTrace [label="2. Emit Telemetry\n(Trace ID bound)", color="#34a853"];
+    LogScript -> GCPTrace [label="3. Query by\nTrace ID", color="#4285f4"];
+
+    // Clusters
+    subgraph cluster_client {
+        label = "Client Side";
+        style = "dashed";
+        ClientScript; LogScript;
+    }
+
+    subgraph cluster_backend {
+        label = "Google Cloud";
+        style = "dashed";
+        StreamAssistAPI; GCPTrace;
+    }
+}

@@ -1,0 +1,56 @@
+<!-- SCREEN 6: SETTINGS (ADMIN & CREDENTIAL DIAGNOSTICS) -->
+<div id="screen-settings" class="screen-content">
+    <header>
+        <div>
+            <h1>Console Settings</h1>
+            <div class="subtitle">Verify environment variable scopes & Google Application Default Credentials (ADC) status</div>
+        </div>
+    </header>
+
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;">
+        <div class="card" style="margin-bottom: 0;">
+            <h2>System Environment Scopes</h2>
+            <div class="table-container" style="margin-top: 1rem;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Variable Name</th>
+                            <th>Configured Path/Value</th>
+                            <th>Source Scope</th>
+                        </tr>
+                    </thead>
+                    <tbody id="settings-env-body">
+                        <tr><td colspan="3" style="text-align: center; color: var(--text-sub);">Probing environment parameters...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2rem;">
+            <div class="card" style="margin-bottom: 0;">
+                <h2>Google ADC Status</h2>
+                <div id="settings-adc-card" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color);">
+                    Checking...
+                </div>
+                <div style="margin-top: 1rem; font-size: 0.82rem; color: var(--text-sub);">
+                    If credentials are expired, run <code>gcloud auth application-default login</code> in your local terminal.
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 0;">
+                <h2>Quick Console Links</h2>
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+                    <a href="https://console.cloud.google.com/ai/search/engines" id="settings-console-link" target="_blank" class="console-link" style="padding: 0.5rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                        🌐 Vertex AI Search Console
+                    </a>
+                    <a href="https://vertexaisearch.cloud.google.com" target="_blank" class="console-link" style="padding: 0.5rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                        🌐 Gemini Enterprise Web Preview App
+                    </a>
+                    <a href="https://github.com/cloud-ai-fde/yahoo-gemini-enterprise" target="_blank" class="console-link" style="padding: 0.5rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                        📁 Git Source Repository
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "name": "eval-harness-console",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^3.1.0",
+    "@material/web": "^1.1.0",
+    "marked": "^11.1.0"
+  },
+  "devDependencies": {
+    "vite": "^6.4.3"
+  }
+}

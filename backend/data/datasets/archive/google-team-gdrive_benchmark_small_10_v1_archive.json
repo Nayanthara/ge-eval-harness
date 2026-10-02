@@ -1,0 +1,104 @@
+[
+  {
+    "query": "how much is the wellness stipend?",
+    "ground_truth": "$150 per month reimbursement for health, fitness classes, and wellness expenses.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "can I get reimbursed for my gym membership or fitness classes and how much is covered?",
+    "ground_truth": "Yes, eligible employees receive up to $150 per month to reimburse gym memberships, fitness classes, athletic shoes, and wellness apps.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "Is the wellness benefit still a $50 quarterly gym discount for partner gyms?",
+    "ground_truth": "No, the historical 2021 policy of a $50 quarterly discount has been replaced by the active $150 monthly wellness stipend reimbursement program.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "Does unused wellness stipend balance roll over to the next month?",
+    "ground_truth": "No, the wellness stipend provides up to $150 per month and documentation does not provide for carrying over or rolling over unused balances to subsequent months.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "Standardize using uv/venv virtual environments, internal Artifactory mirror (artifactory.yahoo.com), pytest, and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "what's the recommended package manager and linter for python projects here?",
+    "ground_truth": "Use uv or python3 -m venv for package management and ruff for fast linting and formatting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "Should I use Python 2.7 with virtualenv-1.11 and pip install --user for my new service?",
+    "ground_truth": "No. Python development standardizes on virtual environments using uv or venv, the internal Artifactory mirror (artifactory.yahoo.com), and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "How do TLS certs work at Yahoo?",
+    "ground_truth": "Authentication and encryption are enforced via internal Certificate Authority (CA) digital signatures (Yahoo Certificate Authority / YCA), validated via OpenSSL, and enforced across ATS and Media Edge gateways.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "Can internal services still support TLS 1.0 or TLS 1.1 for legacy backward compatibility?",
+    "ground_truth": "No, TLS 1.0 and TLS 1.1 have been sunset and disabled. All internal microservices and edge endpoints must enforce TLS 1.2 or TLS 1.3.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ",
+      "https://drive.google.com/open?id=1YVlPRhE9R6gAiSghhGiokyINWDYBnoxv"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  },
+  {
+    "query": "Compare the PTO rollover rules with the wellness stipend monthly rollover policy.",
+    "ground_truth": "PTO allows rolling over up to 5 unused days into the next calendar year, whereas the wellness stipend is a monthly $150 reimbursement with no rollover provision mentioned.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1E7Vk8o8m-tM3OBgbD6J-rYuHoMP3WFa6",
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": ""
+  }
+]

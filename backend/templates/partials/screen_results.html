@@ -1,0 +1,180 @@
+<!-- SCREEN 5: RESULTS -->
+<div id="screen-results" class="screen-content">
+    <header>
+        <div>
+            <h1>Evaluation Results</h1>
+            <div class="subtitle" id="results-view-subtitle">Consolidated Master Comparison Database</div>
+        </div>
+        <div style="display: flex; gap: 0.65rem; align-items: center; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+                <label for="results-run-selector" style="font-size: 0.82rem; font-weight: 600; color: var(--text-sub); white-space: nowrap;">Run:</label>
+                <select id="results-run-selector" onchange="onResultsRunSelected(this.value)" style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); color: var(--text-main); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.84rem; font-weight: 500; outline: none; cursor: pointer; min-width: 250px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); transition: border-color 0.2s, box-shadow 0.2s;">
+                    <option value="" disabled>Loading runs...</option>
+                </select>
+            </div>
+            <button class="btn btn-secondary" onclick="openRunSelectorModal('results')" style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.82rem; padding: 0.4rem 0.75rem;">
+                <span>🔍</span> <span>Browse Runs...</span>
+            </button>
+            <button onclick="exportToBigQuery()" class="btn" style="background: linear-gradient(135deg, #0284c7, #0369a1); font-size: 0.82rem; padding: 0.4rem 0.75rem;">📤 Export to BigQuery</button>
+            <a href="/api/export_master_csv" class="btn btn-secondary" style="font-size: 0.82rem; padding: 0.4rem 0.75rem;">📥 Export Master CSV</a>
+            <button class="btn btn-secondary" onclick="loadMasterComparison()" style="font-size: 0.82rem; padding: 0.4rem 0.75rem;">🔄 Refresh Table</button>
+        </div>
+    </header>
+
+    <!-- Run Failure / Error Alert Banner -->
+    <div id="results-run-error-banner" style="display: none; background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.4); border-radius: var(--radius-lg); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <span style="font-size: 2rem; line-height: 1;" id="results-error-icon">🚨</span>
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.35rem;">
+                        <h3 style="margin: 0; color: #fca5a5; font-family: var(--font-display); font-size: 1.15rem;" id="results-error-title">Evaluation Run Failed to Complete</h3>
+                        <span class="badge badge-fail" id="results-error-badge">FAILED</span>
+                    </div>
+                    <div style="color: #fecaca; font-size: 0.92rem; line-height: 1.5; margin-bottom: 0.5rem;" id="results-error-desc">
+                        The most recent evaluation run encountered an error and could not complete all scheduled queries.
+                    </div>
+                    <div id="results-error-details-box" style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: var(--radius-sm); padding: 0.75rem 1rem; font-family: monospace; font-size: 0.85rem; color: #fee2e2; white-space: pre-wrap; word-break: break-word; max-height: 150px; overflow-y: auto;">
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; flex-shrink: 0;">
+                <button class="btn btn-secondary" style="border-color: rgba(239, 68, 68, 0.5); color: #fca5a5; font-size: 0.85rem; padding: 0.4rem 0.8rem;" id="btn-results-error-logs" onclick="viewCurrentRunLogs()">📜 View Run Logs</button>
+                <button class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.4rem 0.8rem;" id="btn-results-error-duplicate" onclick="duplicateCurrentErrorRun()">🔄 Retry / Duplicate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Redesigned General KPI Summary Cards -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+        <span style="font-size: 0.8rem; font-weight: 700; color: var(--text-sub); text-transform: uppercase; letter-spacing: 0.5px;">Key Benchmark Performance Indicators</span>
+        <button class="btn btn-secondary btn-sm" onclick="openHelpModal('kpi')" id="btn-kpi-help" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 0.25rem;">
+            <span>ℹ️</span> <span>KPI Info</span>
+        </button>
+    </div>
+    <div class="kpi-row">
+        <div class="kpi-card">
+            <div class="kpi-title">📊 Total Scenarios</div>
+            <div class="kpi-value" id="kpi-total-scenarios">--</div>
+            <div class="kpi-detail">Matrix combinations ran</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">🤖 GE LLM Judge</div>
+            <div class="kpi-value" id="kpi-ge-accuracy">--</div>
+            <div class="kpi-detail" id="kpi-ge-accuracy-detail">Factuality Pass Rate</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">📄 GE Evidence Match</div>
+            <div class="kpi-value" id="kpi-ge-evidence-match">--</div>
+            <div class="kpi-detail" id="kpi-ge-evidence-detail">Content Grounding Pass</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">📎 GE Source Match</div>
+            <div class="kpi-value" id="kpi-ge-source-match">--</div>
+            <div class="kpi-detail" id="kpi-ge-source-detail">Exact Provenance Pass</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">🎯 Glean Accuracy</div>
+            <div class="kpi-value" id="kpi-glean-accuracy">--</div>
+            <div class="kpi-detail" id="kpi-glean-accuracy-detail">Baseline Pass Rate</div>
+        </div>
+        <div class="kpi-card">
+            <div class="kpi-title">⚡ Avg Latency (TTLT)</div>
+            <div class="kpi-value" id="kpi-avg-latency">--</div>
+            <div class="kpi-detail">Seconds per answer</div>
+        </div>
+    </div>
+
+    <!-- Split layout with Table (Left) and details (Right) -->
+    <div class="split-layout">
+        <div class="card split-table">
+            <div class="table-container">
+                <table id="master-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 38%;">Query</th>
+                            <th style="width: 28%;">Ground Truth</th>
+                            <th style="width: 34%;">Evaluation Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="master-body">
+                        <tr>
+                            <td colspan="3" style="text-align: center; color: var(--text-sub);">Loading comparison database records...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="split-panel" id="results-details-panel">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                <h3 style="margin: 0; font-family: var(--font-display); color: var(--text-main); font-size: 1.15rem;">🔍 Scenario Analysis</h3>
+                <button class="btn btn-secondary" style="padding: 0.25rem 0.5rem; min-width: 0; font-size: 0.9rem;" onclick="closeDetailsPanel()">✕</button>
+            </div>
+            <div id="details-panel-content" style="display: flex; flex-direction: column; gap: 1.25rem;">
+                <div style="color: var(--text-sub); text-align: center; margin-top: 2rem;">Select a table row to view full evaluation details.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full Screen Detail View (shows when a query row is clicked) -->
+    <div class="card" id="results-full-screen-detail" style="display: none; margin-top: 1.5rem; padding: 1.5rem; animation: slideIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+            <div>
+                <button class="btn btn-secondary" onclick="closeFullScreenDetail()" style="margin-bottom: 0.5rem; padding: 0.35rem 0.75rem; font-size: 0.85rem;">⬅️ Back to Results scoreboard</button>
+                <h2 style="margin: 0; font-family: var(--font-display); color: var(--text-main); font-size: 1.3rem;" id="results-detail-title">Query Evaluation Details</h2>
+            </div>
+        </div>
+
+        <!-- Comparison Table of all system outputs for this query -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.5rem; margin-bottom: 0.75rem;">
+            <h3 style="margin: 0; color: var(--text-main); font-family: var(--font-display); font-size: 1.1rem;">Comparison Scorecard</h3>
+            <button class="btn btn-secondary btn-sm" onclick="openHelpModal('scorecard')" id="btn-scorecard-help" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                <span>ℹ️</span> <span>Info</span>
+            </button>
+        </div>
+        <div class="table-container" style="margin-bottom: 2rem;">
+            <table id="detail-comparison-table" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;">System</th>
+                        <th style="width: 14%;">Model / Type</th>
+                        <th style="width: 12%;">LLM Judge</th>
+                        <th style="width: 14%;">Evidence Match</th>
+                        <th style="width: 12%;">Source Match</th>
+                        <th style="width: 9%;">TTFT</th>
+                        <th style="width: 9%;">TTLT</th>
+                        <th style="width: 15%;">Verdict</th>
+                    </tr>
+                </thead>
+                <tbody id="detail-comparison-body">
+                    <!-- Populated dynamically with GE, Glean, and Ground Truth stacked rows -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Query / Ground Truth Details Card (Directly above the answer breakdown) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+            <div style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem;">
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;">❓ User Query</div>
+                <div style="font-weight: 600; font-size: 1.05rem; color: var(--text-main); line-height: 1.4;" id="detail-query-text">--</div>
+            </div>
+            <div style="background: var(--bg-card-secondary); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                <div>
+                    <div style="font-size: 0.75rem; font-weight: 700; color: var(--success-color); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.35rem;">🎯 Ground Truth Target Answer</div>
+                    <div style="font-size: 0.95rem; color: var(--text-main); line-height: 1.4;" id="detail-gt-text">--</div>
+                </div>
+                <div style="border-top: 1px solid var(--border-color); padding-top: 0.5rem;">
+                    <div style="font-size: 0.72rem; font-weight: 700; color: var(--success-color); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem;">📎 Ground Truth Authoritative Sources</div>
+                    <div style="font-size: 0.8rem; line-height: 1.4; color: var(--accent-primary);" id="detail-gt-sources">--</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed side-by-side or stacked responses -->
+        <h3 style="margin-top: 2rem; margin-bottom: 1rem; color: var(--text-main); font-family: var(--font-display); font-size: 1.1rem;">System Responses & Source Attribution Breakdown</h3>
+        <div id="detail-systems-expanded" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <!-- Populated dynamically with full response text, reasoning, and citation details for GE, Glean, and Ground Truth -->
+        </div>
+    </div>
+</div>

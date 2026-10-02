@@ -1,0 +1,648 @@
+[
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "GE did not point to Confluence as a source even though its the only connector enabled but its still sourcing Google pages",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342203653/How+To+Use+Python+At+Yahoo"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342203653/How+To+Use+Python+At+Yahoo",
+    "ge_source_urls": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/github/github-configuration?hl=ja\nhttps://docs.cloud.google.com/gemini/enterprise/docs/use-case-generate-refactor-code?hl=zh-tw\nhttps://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+    "evaluation_status": "",
+    "comments": "GE did not point to Confluence as a source even though its the only connector enabled but its still sourcing Google pages",
+    "sheet_tab": "Confluence",
+    "sheet_row": 2
+  },
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "Every time I try this prompt, it seems to always point to the Python yahoo.python_project Setup confluence page. The expected source page never shows up as a source",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342203653/How+To+Use+Python+At+Yahoo"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342203653/How+To+Use+Python+At+Yahoo",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/FP/pages/93847574/Python+yahoo.python_project+Setup\nhttps://ouryahoo.atlassian.net/wiki/spaces/FP/pages/93848388/Python+ouroath.python_project+Setup\nhttps://ouryahoo.atlassian.net/wiki/spaces/~mpersiko/pages/99321014/Setting+up+Python+on+Verizon+Laptops\nhttps://ouryahoo.atlassian.net/wiki/spaces/FP/pages/93848636/Redis+Ops+Tool+-+Validate+Redis+State\nhttps://ouryahoo.atlassian.net/wiki/spaces/HADOOP/pages/91586570/Grid+Cook+Book",
+    "evaluation_status": "",
+    "comments": "Every time I try this prompt, it seems to always point to the Python yahoo.python_project Setup confluence page. The expected source page never shows up as a source",
+    "sheet_tab": "Confluence",
+    "sheet_row": 3
+  },
+  {
+    "query": "How do TLS certs work?",
+    "ground_truth": "Expected source isn't one listed in Sources and one source is still pointing to Google even though the Confluence connector is the only connector enabled",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342655767/How+To+Check+TLS+Cert"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342655767/How+To+Check+TLS+Cert\nhttps://ouryahoo.atlassian.net/wiki/spaces/XOBNIPE/pages/254412467",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485110/SSL+TLS+on+ATSv2\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485992/TLS+Certificates\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97486857/TLS+SSL+Certificates+Management+on+Media+Edge+ATSv2\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485120/Testing+and+Deploying+TLS+Certificates\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485741/Mutual+TLS+on+Media+Edge\nhttps://docs.cloud.google.com/gemini/enterprise/docs/alphaevolve/developer-guide/evaluator-implementation-patterns",
+    "evaluation_status": "",
+    "comments": "Expected source isn't one listed in Sources and one source is still pointing to Google even though the Confluence connector is the only connector enabled",
+    "sheet_tab": "Confluence",
+    "sheet_row": 4
+  },
+  {
+    "query": "How do TLS certs work?",
+    "ground_truth": "Expected source not listed in Sources.",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342655767/How+To+Check+TLS+Cert"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/HOWTO/pages/342655767/How+To+Check+TLS+Cert\nhttps://ouryahoo.atlassian.net/wiki/spaces/XOBNIPE/pages/254412467",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485992/TLS+Certificates\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97485110/SSL+TLS+on+ATSv2\nhttps://ouryahoo.atlassian.net/wiki/spaces/VDMSIT/pages/91037284/Glossary+of+EdgeCast+Terms+and+Acronyms\nhttps://ouryahoo.atlassian.net/wiki/spaces/ME/pages/97486857/TLS+SSL+Certificates+Management+on+Media+Edge+ATSv2",
+    "evaluation_status": "",
+    "comments": "Expected source not listed in Sources.",
+    "sheet_tab": "Confluence",
+    "sheet_row": 5
+  },
+  {
+    "query": "What are the Pre-Onboarding Checklist steps for konaplus user onboarding?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Confluence",
+    "sheet_row": 6
+  },
+  {
+    "query": "What are the Pre-Onboarding Checklist steps for konaplus user onboarding?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/MUL/pages/70946415/User+Onboarding+yo+konaplus-onboard",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Confluence",
+    "sheet_row": 7
+  },
+  {
+    "query": "what are the steps to mount a zip file as a volume?",
+    "ground_truth": "Response seems correct but no source button nor citation links",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/EE/pages/782008515/Mounting+a+zip+file+as+a+volume"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/EE/pages/782008515/Mounting+a+zip+file+as+a+volume",
+    "ge_source_urls": "Response seems correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Response seems correct but no source button nor citation links",
+    "sheet_tab": "Confluence",
+    "sheet_row": 8
+  },
+  {
+    "query": "what are the steps to mount a zip file as a volume?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/EE/pages/782008515/Mounting+a+zip+file+as+a+volume"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/EE/pages/782008515/Mounting+a+zip+file+as+a+volume",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/wiki/spaces/EE/pages/782008515/Mounting+a+zip+file+as+a+volume",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Confluence",
+    "sheet_row": 9
+  },
+  {
+    "query": "What's the onboarding process for Claude?",
+    "ground_truth": "With all connectors enabled, response is using multiple TheStreet pages as its sources",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/SCM/pages/817725488"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "Multiple claude sources from Confluence but expected source was in list",
+    "ge_source_urls": "With all connectors enabled, response is using multiple TheStreet pages as its sources",
+    "evaluation_status": "",
+    "comments": "With all connectors enabled, response is using multiple TheStreet pages as its sources",
+    "sheet_tab": "Confluence",
+    "sheet_row": 10
+  },
+  {
+    "query": "What's the onboarding process for Claude?",
+    "ground_truth": "With only Confluence connector enabled and all other connectors disabled. Provided no source button nor citation links",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/SCM/pages/817725488"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "Multiple claude sources from Confluence but expected source was in list",
+    "ge_source_urls": "It appears that there are no internal documents or guides specifically outlining an onboarding process for Claude within our connected enterprise Confluence pages or active EITAI project records.\n\n\ud83d\udca1 What You Can Do Next:\nAsk in Slack: Check the #eitai-announcements or #gemini-enterprise-testing Slack channels, where internal tool access and AI onboarding processes are often discussed.\n\nConsult Google Support: Since many of our Gemini Enterprise and third-party AI integrations are currently dependent on external Google support tickets, your team\u2019s Google contacts may have the necessary onboarding links or workspace permissions.\n\nCheck with Key Contacts:\n\nAnisha Patel (Sr. Manager) or Honish Joseph can help clarify if Claude onboarding is handled through a specific Yahoo identity group (e.g., IdentityIQ) or if it's currently restricted.",
+    "evaluation_status": "",
+    "comments": "With only Confluence connector enabled and all other connectors disabled. Provided no source button nor citation links",
+    "sheet_tab": "Confluence",
+    "sheet_row": 11
+  },
+  {
+    "query": "What's the onboarding process for Claude?",
+    "ground_truth": "No sources or citation links from response. Response gave some information that seems inaccurate.",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/wiki/spaces/SCM/pages/817725488"
+    ],
+    "connector_id": "confluence-ds_1780379872654",
+    "connector_type": "Confluence LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "Multiple claude sources from Confluence but expected source was in list",
+    "ge_source_urls": "My search of our Confluence workspace did not yield any results for pages, blog posts, or whiteboards matching \"Claude\" or \"onboarding.\" Additionally, the directory lookups timed out, suggesting that the requested internal records are either missing or currently inaccessible.",
+    "evaluation_status": "",
+    "comments": "No sources or citation links from response. Response gave some information that seems inaccurate.",
+    "sheet_tab": "Confluence",
+    "sheet_row": 12
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "It did not provide the sources in its response. I had to ask GE what sources it used",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/1313304558992379/valor-resources\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/1400189731442867/CW_data_change",
+    "evaluation_status": "",
+    "comments": "It did not provide the sources in its response. I had to ask GE what sources it used",
+    "sheet_tab": "LumApps",
+    "sheet_row": 2
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "GE unable to find documentation: \n\n\"I was unable to find specific documents detailing Yahoo's official time off or PTO policies in the internal system. The searches returned operational handoffs, news articles, and organizational posts, but no official HR handbook or time-off policy summaries....\"",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "LumApps",
+    "sheet_row": 3
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "GE's 1st source is from 2025, and the 2nd source is from 2015",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/2329158250575949/2025-annual-enrollment\nhttps://thestreet.ouryahoo.com/backyard/ls/community/operations-center/post/4504033351696384",
+    "evaluation_status": "",
+    "comments": "GE's 1st source is from 2025, and the 2nd source is from 2015",
+    "sheet_tab": "LumApps",
+    "sheet_row": 4
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "GE unable to find documentation:\n\n\"I, Gemini Enterprise, was unable to find a general document detailing Yahoo's overall Paid Time Off (PTO) or Flexible Time Off (FTO) policy within our internal platform's search results.\"",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "LumApps",
+    "sheet_row": 5
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "It did not provide the sources in its response. I had to ask GE what sources it used",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/AgileOne_Tenure_Exception",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/1199496709011349/Managers-of-Contingent-workers",
+    "evaluation_status": "",
+    "comments": "It did not provide the sources in its response. I had to ask GE what sources it used",
+    "sheet_tab": "LumApps",
+    "sheet_row": 6
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "GE's third source (https://thestreet.ouryahoo.com/backyard/ls/content/4519159454760960/contingent-worker-faqs-for-managers) has a header that says \"HRA KB Articles ARCHIVE\" and shows a publish date of 3/1/2016. Is recency not being considered?",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/AgileOne_Tenure_Exception",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/1400189731442867/CW_data_change\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/4387272956782995/AgileOne_Tenure_Exception\nhttps://thestreet.ouryahoo.com/backyard/ls/content/4519159454760960/contingent-worker-faqs-for-managers",
+    "evaluation_status": "",
+    "comments": "GE's third source (https://thestreet.ouryahoo.com/backyard/ls/content/4519159454760960/contingent-worker-faqs-for-managers) has a header that says \"HRA KB Articles ARCHIVE\" and shows a publish date of 3/1/2016. Is recency not being considered?",
+    "sheet_tab": "LumApps",
+    "sheet_row": 7
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/AgileOne_Tenure_Exception",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/7201829278965435/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/7291200219932763/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/6970307259717155/CW_tenure_policy\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/1400189731442867/CW_data_change",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "LumApps",
+    "sheet_row": 8
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/AgileOne_Tenure_Exception",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/content/7201829278965435/Contingent-Worker-Extension\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/7291200219932763/CW-FAQ-Worker\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/6970307259717155/CW_tenure_policy\nhttps://thestreet.ouryahoo.com/thestreet/ls/content/1400189731442867/CW_data_change",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "LumApps",
+    "sheet_row": 9
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 10
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "worked as expected here",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy\nhttps://thestreet.ouryahoo.com/thestreet/contingent-worker-policy\nhttps://thestreet.ouryahoo.com/thestreet/how-to-submit-view-your-work-from-abroad-attestation\nhttps://thestreet.ouryahoo.com/thestreet/global-hr-policy-portal",
+    "evaluation_status": "",
+    "comments": "worked as expected here",
+    "sheet_tab": "LumApps",
+    "sheet_row": 11
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Tried same query again like above 20-30 seconds after and gave a different response with no source button",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "No source button nor citation links. Provided the response below without a source link on where it got it from:\nBased on Yahoo's internal guidelines, our flexible operating model is called Work@Yahoo. While specific international travel policies often depend on your localized department, the following guidelines govern working outside your normal resident work location:\n\n\ud83d\udccd Working Outside Your Resident State (U.S. Employees Only)\nIf you are a U.S.-based employee working in a location outside of your resident state for 14 or more days in a calendar year, you must adhere to the following:\n\nDisclose to Payroll: You are required to disclose this information to the Payroll team.\n\nLog in Workday: Document your additional working locations directly in Workday as soon as you reach the 14-day threshold.\n\nWhy it matters: Correct reporting ensures that the right state tax jurisdiction is used and correct taxes are withheld. This prevents potential tax audits, significant back-taxes, or penalties for both you and Yahoo.\n\n\ud83d\udccc Key Actions\nKeep a record of all locations where you work throughout the calendar year.\n\nLog any new or additional working locations in Workday immediately upon reaching the 14-day mark.\n\nFor any international work-from-abroad questions or department-specific compliance, reach out directly to payroll@yahooinc.com or consult the internal Work@Yahoo FAQs.",
+    "evaluation_status": "",
+    "comments": "Tried same query again like above 20-30 seconds after and gave a different response with no source button",
+    "sheet_tab": "LumApps",
+    "sheet_row": 12
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 13
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 14
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "with all connectors enabled",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "Multiple Google Drive sources, no Lumapps source",
+    "evaluation_status": "",
+    "comments": "with all connectors enabled",
+    "sheet_tab": "LumApps",
+    "sheet_row": 15
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "With only Lumapps connector enabled(all other connectors are disabled)",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/work-from-abroad-policy",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "With only Lumapps connector enabled(all other connectors are disabled)",
+    "sheet_tab": "LumApps",
+    "sheet_row": 16
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/gsd-walkup-windows-locations-and-hours"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/gsd-walkup-windows-locations-and-hours",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 17
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/gsd-walkup-windows-locations-and-hours"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/gsd-walkup-windows-locations-and-hours",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 18
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "with all connectors enabled. In response there was a link for TheStreet, and which is referencing the globa time off page https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house",
+    "ge_source_urls": "Multiple Google Drive sources and a Google calendar source, no Lumapps source",
+    "evaluation_status": "",
+    "comments": "with all connectors enabled. In response there was a link for TheStreet, and which is referencing the globa time off page https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "sheet_tab": "LumApps",
+    "sheet_row": 19
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "with only Lumapps connector enabled(all other connectors are disabled) In response, TheStreet link is referencing to the TheStreet homepage https://thestreet.ouryahoo.com/",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house",
+    "ge_source_urls": "No source. Response gave no date of next open house.",
+    "evaluation_status": "",
+    "comments": "with only Lumapps connector enabled(all other connectors are disabled) In response, TheStreet link is referencing to the TheStreet homepage https://thestreet.ouryahoo.com/",
+    "sheet_tab": "LumApps",
+    "sheet_row": 20
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "No source button nor citation links. Provided the response that was 1/3 right and 2/3 incorrect",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house",
+    "ge_source_urls": "The next Open House is scheduled for December (following the previous one hosted in November).\n\nHere are the details you requested:\n\nSlack Channel: The official Slack channel for the event is #openhouse-official (you can also find recaps and links shared in #yahoo-official).\n\nTheStreet Link: You can access the internal platform home page at yo/thestreet.",
+    "evaluation_status": "",
+    "comments": "No source button nor citation links. Provided the response that was 1/3 right and 2/3 incorrect",
+    "sheet_tab": "LumApps",
+    "sheet_row": 21
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "Some links in response are pointing to TheStreet homepage",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Some links in response are pointing to TheStreet homepage",
+    "sheet_tab": "LumApps",
+    "sheet_row": 22
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "For TheStreet link, it gave some other open house draft citation link https://thestreet.ouryahoo.com/thestreet/ls/content/4098387692826507/open-house-draft",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/ls/community/open-house",
+    "ge_source_urls": "Open House Schedule\nThe global employee Open House is scheduled for Thursday, March 14 at 10 a.m. PT / 1 p.m. ET / 6 p.m. BT.\n\n\ud83d\udcac Slack Channel\nTo join the live conversation, submit questions, and connect with other employees, head over to the #openhouse-official Slack channel.\n\n\ud83d\udd17 TheStreet Link\nYou can view the livestream, catch up on previous replays, and access the full schedule on TheStreet's Open House Hub.",
+    "evaluation_status": "",
+    "comments": "For TheStreet link, it gave some other open house draft citation link https://thestreet.ouryahoo.com/thestreet/ls/content/4098387692826507/open-house-draft",
+    "sheet_tab": "LumApps",
+    "sheet_row": 23
+  },
+  {
+    "query": "when is the next company US holiday?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "LumApps",
+    "sheet_row": 24
+  },
+  {
+    "query": "when is the next company US holiday?",
+    "ground_truth": "Provided a response that looks correct but no source button nor citation links",
+    "expected_source": [
+      "https://thestreet.ouryahoo.com/thestreet/global-time-off-page"
+    ],
+    "connector_id": "yahoo-lumapps-mock-ds-v6",
+    "connector_type": "LumApps LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://thestreet.ouryahoo.com/thestreet/global-time-off-page",
+    "ge_source_urls": "Provided a response that looks correct but no source button nor citation links",
+    "evaluation_status": "",
+    "comments": "Provided a response that looks correct but no source button nor citation links",
+    "sheet_tab": "LumApps",
+    "sheet_row": 25
+  },
+  {
+    "query": "Give me a list of all of my EITAI tickets that have status In Progress",
+    "ground_truth": "GE's sources are showing tickets that are not assigned to me",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/browse/EITAI-1466",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1417",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1377",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1235"
+    ],
+    "connector_id": "jira-ds_1780381652438",
+    "connector_type": "Jira Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1466\nhttps://ouryahoo.atlassian.net/browse/EITAI-1417\nhttps://ouryahoo.atlassian.net/browse/EITAI-1377\nhttps://ouryahoo.atlassian.net/browse/EITAI-1235",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-771\nhttps://ouryahoo.atlassian.net/browse/EITAI-784\nhttps://ouryahoo.atlassian.net/browse/EITAI-794\nhttps://ouryahoo.atlassian.net/browse/EITAI-1176\nhttps://ouryahoo.atlassian.net/browse/EITAI-1206\nhttps://ouryahoo.atlassian.net/browse/EITAI-1263\nhttps://ouryahoo.atlassian.net/browse/EITAI-1322\nhttps://ouryahoo.atlassian.net/browse/EITAI-1323\nhttps://ouryahoo.atlassian.net/browse/EITAI-1445",
+    "evaluation_status": "",
+    "comments": "GE's sources are showing tickets that are not assigned to me",
+    "sheet_tab": "Jira/JSM",
+    "sheet_row": 2
+  },
+  {
+    "query": "Give me a list of all of my EITAI tickets that have status In Progress",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/browse/EITAI-1466",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1417",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1377",
+      "https://ouryahoo.atlassian.net/browse/EITAI-1235"
+    ],
+    "connector_id": "jira-ds_1780381652438",
+    "connector_type": "Jira LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1466\nhttps://ouryahoo.atlassian.net/browse/EITAI-1417\nhttps://ouryahoo.atlassian.net/browse/EITAI-1377\nhttps://ouryahoo.atlassian.net/browse/EITAI-1235",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1466\nhttps://ouryahoo.atlassian.net/browse/EITAI-1235\nhttps://ouryahoo.atlassian.net/browse/EITAI-1417\nhttps://ouryahoo.atlassian.net/browse/EITAI-1377",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Jira/JSM",
+    "sheet_row": 3
+  },
+  {
+    "query": "how many EITAI tickets in the AI development Kanban board are assigned to Gary Yeung that have status Ready for Acceptance?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/browse/EITAI-1365"
+    ],
+    "connector_id": "jira-ds_1780381652438",
+    "connector_type": "Jira Native Connector",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1365",
+    "ge_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1199\nhttps://ouryahoo.atlassian.net/browse/EITAI-1273\nhttps://ouryahoo.atlassian.net/browse/EITAI-1260\nhttps://ouryahoo.atlassian.net/browse/EITAI-1197\nhttps://ouryahoo.atlassian.net/browse/INTPORTALS-7688\nhttps://ouryahoo.atlassian.net/browse/EITAI-1244",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Jira/JSM",
+    "sheet_row": 4
+  },
+  {
+    "query": "how many EITAI tickets in the AI development Kanban board are assigned to Gary Yeung that have status Ready for Acceptance?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://ouryahoo.atlassian.net/browse/EITAI-1365"
+    ],
+    "connector_id": "jira-ds_1780381652438",
+    "connector_type": "Jira LCA",
+    "glean_response_text": "",
+    "glean_source_urls": "https://ouryahoo.atlassian.net/browse/EITAI-1365",
+    "ge_source_urls": "No source nor citation links provided in response. This was the response below:\nThere are 15 EITAI tickets in the AI development Kanban board assigned to Gary Yeung that have the status Ready for Acceptance.",
+    "evaluation_status": "",
+    "comments": "",
+    "sheet_tab": "Jira/JSM",
+    "sheet_row": 5
+  },
+  {
+    "query": "how much is the wellness stipend?",
+    "ground_truth": "",
+    "expected_source": [
+      "https://drive.google.com/file/d/19L5YCsfAMd-6xdHyj2GkbPfP4807Xoj9/view?usp=drive_link"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "connector_type": "how much is the wellness stipend?",
+    "glean_response_text": "",
+    "glean_source_urls": "",
+    "ge_source_urls": "",
+    "evaluation_status": "PASS",
+    "comments": "",
+    "sheet_tab": "GE Core Assistant Prompt Variation",
+    "sheet_row": 2
+  }
+]

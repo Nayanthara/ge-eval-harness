@@ -1,0 +1,22 @@
+<!-- Global Top App Bar with Environment Status & Theme Toggle -->
+<div class="top-nav-bar" style="display: flex; justify-content: space-between; align-items: center; padding: 0.35rem 0 0.85rem 0; margin-bottom: 0.75rem; border-bottom: 1px solid var(--border-color);">
+    <div style="display: flex; align-items: center; gap: 0.65rem; font-size: 0.82rem; color: var(--text-sub); flex-wrap: wrap;">
+        <span id="header-gcp-project-badge" style="display: inline-flex; align-items: center; gap: 0.35rem; background: var(--bg-card-secondary); padding: 0.2rem 0.55rem; border-radius: 12px; border: 1px solid var(--border-color); font-weight: 500;">
+            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--success-color);"></span>
+            <span id="header-gcp-project-label">GCP: <b style="color: var(--text-main);">Loading...</b></span>
+        </span>
+        <span id="header-engine-id-badge" style="display: inline-flex; align-items: center; gap: 0.35rem; background: var(--bg-card-secondary); padding: 0.2rem 0.55rem; border-radius: 12px; border: 1px solid var(--border-color); font-weight: 500;">
+            <span id="header-engine-id-label">Engine: <b style="color: var(--text-main);">Loading...</b></span>
+        </span>
+        <span id="header-search-mode-badge" style="display: inline-flex; align-items: center; gap: 0.35rem; background: var(--bg-card-secondary); padding: 0.2rem 0.55rem; border-radius: 12px; border: 1px solid var(--border-color); font-weight: 500;">
+            <span style="display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-primary);"></span>
+            <span id="header-search-mode-label">Search Mode: <b style="color: var(--accent-primary);">Loading...</b></span>
+        </span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <button id="theme-toggle-btn" class="btn btn-secondary btn-sm" onclick="toggleTheme()" style="display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.3rem 0.75rem; border-radius: 20px; font-size: 0.82rem; cursor: pointer; transition: all 0.2s;" title="Toggle Light / Dark Mode">
+            <span id="theme-toggle-icon">🌙</span>
+            <span id="theme-toggle-label">Dark Mode</span>
+        </button>
+    </div>
+</div>

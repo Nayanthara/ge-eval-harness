@@ -1,0 +1,109 @@
+<!-- SCREEN: DATASETS MANAGER -->
+<div id="screen-datasets" class="screen-content">
+    <header>
+        <div>
+            <h1>Dataset Manager</h1>
+            <div class="subtitle">Manage canonical golden test suites and inspect versioned historical run snapshots</div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+            <a href="/api/template/dataset" class="btn btn-secondary" id="btn-download-dataset-template-datasets" style="display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-size: 0.88rem;">
+                <span>📥</span>
+                <span>Download Blank Template</span>
+            </a>
+            <a href="/api/template/dataset/samples" class="btn btn-secondary" id="btn-download-dataset-samples-datasets" style="display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; font-size: 0.88rem;">
+                <span>📋</span>
+                <span>Download Template (with Samples)</span>
+            </a>
+            <button class="btn btn-secondary" onclick="document.getElementById('wizard-file-input').click()">📤 Import CSV</button>
+            <button class="btn" onclick="openCreateDatasetModal()">➕ Create Canonical Dataset</button>
+        </div>
+    </header>
+
+    <!-- SECTION 1: CANONICAL (NAMED) DATASETS -->
+    <div class="card" style="margin-bottom: 2rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.15rem;">
+            <div>
+                <h2 style="font-family: var(--font-display); font-size: 1.18rem; margin: 0; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                    <span>📁</span>
+                    <span>Canonical (Named) Datasets</span>
+                    <button class="btn btn-secondary btn-sm" onclick="openHelpModal('canonical_datasets')" id="btn-canonical-help" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                        <span>ℹ️</span> <span>Info</span>
+                    </button>
+                </h2>
+                <div style="font-size: 0.82rem; color: var(--text-sub); margin-top: 0.25rem;">
+                    Modifiable golden benchmark datasets stored in the active workspace repository.
+                </div>
+            </div>
+            <span class="badge badge-pass" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Modifiable</span>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 30%; text-align: left; padding: 0.45rem 0.65rem;">Dataset Name / ID</th>
+                        <th style="width: 15%; text-align: left; padding: 0.45rem 0.65rem;">Category / Type</th>
+                        <th style="width: 15%; text-align: left; padding: 0.45rem 0.65rem;">Scenarios Count</th>
+                        <th style="width: 40%; text-align: right; padding: 0.45rem 0.65rem;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="canonical-datasets-table-body">
+                    <tr><td colspan="4" style="text-align: center; color: var(--text-sub); padding: 1rem 0.5rem;">Loading canonical datasets...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECTION 2: HISTORICAL RUN DATASETS (READ-ONLY SNAPSHOTS) -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.15rem;">
+            <div>
+                <h2 style="font-family: var(--font-display); font-size: 1.18rem; margin: 0; color: var(--text-main); display: flex; align-items: center; gap: 0.5rem;">
+                    <span>🔒</span>
+                    <span>Historical Datasets (Read-Only Snapshots)</span>
+                    <button class="btn btn-secondary btn-sm" onclick="openHelpModal('historical_datasets')" id="btn-historical-help" style="padding: 0.15rem 0.45rem; font-size: 0.72rem; border-radius: 12px; display: inline-flex; align-items: center; gap: 0.25rem;">
+                        <span>ℹ️</span> <span>Info</span>
+                    </button>
+                </h2>
+                <div style="font-size: 0.82rem; color: var(--text-sub); margin-top: 0.25rem;">
+                    Immutable, point-in-time query snapshots frozen at the exact moment of each evaluation run.
+                </div>
+            </div>
+            <span class="badge badge-secondary" style="font-size: 0.72rem; padding: 0.2rem 0.6rem;">Read-Only</span>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 25%; text-align: left; padding: 0.45rem 0.65rem;">Run ID</th>
+                        <th style="width: 20%; text-align: left; padding: 0.45rem 0.65rem;">Execution Timestamp</th>
+                        <th style="width: 15%; text-align: left; padding: 0.45rem 0.65rem;">Frozen Scenarios</th>
+                        <th style="width: 40%; text-align: right; padding: 0.45rem 0.65rem;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="historical-datasets-table-body">
+                    <tr><td colspan="4" style="text-align: center; color: var(--text-sub); padding: 1rem 0.5rem;">Loading historical dataset snapshots...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Historical Datasets Pagination -->
+        <div id="historical-datasets-pagination" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--text-sub);">
+            <div>
+                Show 
+                <select id="hist-datasets-per-page-select" onchange="changeHistoricalDatasetsPerPage(this.value)" style="background: var(--input-bg); border: 1px solid var(--input-border); color: var(--input-text); padding: 0.25rem 0.5rem; border-radius: 6px; outline: none; cursor: pointer;">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                </select>
+                per page
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <button id="hist-datasets-prev-btn" onclick="prevHistoricalDatasetsPage()" class="btn btn-secondary" style="padding: 0.3rem 0.65rem; font-size: 0.8rem;">◀ Previous</button>
+                <span id="hist-datasets-page-info">Page 1 of 1</span>
+                <button id="hist-datasets-next-btn" onclick="nextHistoricalDatasetsPage()" class="btn btn-secondary" style="padding: 0.3rem 0.65rem; font-size: 0.8rem;">Next ▶</button>
+            </div>
+        </div>
+    </div>
+</div>

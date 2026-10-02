@@ -1,0 +1,510 @@
+[
+  {
+    "query": "how much is the wellness stipend?",
+    "ground_truth": "$150 per month reimbursement for health, fitness classes, and wellness expenses.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Checks monthly reimbursement limit for active wellness benefit.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "can I get reimbursed for my gym membership or fitness classes and how much is covered?",
+    "ground_truth": "Yes, eligible employees receive up to $150 per month to reimburse gym memberships, fitness classes, athletic shoes, and wellness apps.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "lookup_type": "paraphrased",
+    "description": "Paraphrased: Natural inquiry asking about gym membership reimbursement coverage.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Is the wellness benefit still a $50 quarterly gym discount for partner gyms?",
+    "ground_truth": "No, the historical 2021 policy of a $50 quarterly discount has been replaced by the active $150 monthly wellness stipend reimbursement program.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests active $150/mo policy against outdated 2021 $50 quarterly discount doc in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Does unused wellness stipend balance roll over to the next month?",
+    "ground_truth": "No, unused balances from the $150 monthly limit do not roll over to subsequent months (use it or lose it).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Tests monthly rollover rule on wellness stipend.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "Standardize using uv/venv virtual environments, internal Artifactory mirror (artifactory.yahoo.com), pytest, and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Core Python tooling standard (uv, artifactory, pytest, ruff).",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "what's the recommended package manager and linter for python projects here?",
+    "ground_truth": "Use uv or python3 -m venv for package management and ruff for fast linting and formatting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "lookup_type": "paraphrased",
+    "description": "Paraphrased: Developer question about standard linter and environment manager.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Should I use Python 2.7 with virtualenv-1.11 and pip install --user for my new service?",
+    "ground_truth": "No, Python 2.7 reached end-of-life and was deprecated. Modern Yahoo services must use Python 3.12+ with uv and internal Artifactory packages.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests modern Python 3 standards against legacy Python 2.7 migration notice in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "How do TLS certs work at Yahoo?",
+    "ground_truth": "Authentication and encryption are enforced via internal Certificate Authority (CA) digital signatures and standard TLS handshake.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Mechanism of internal TLS certificate verification.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Can internal services still support TLS 1.0 or TLS 1.1 for legacy backward compatibility?",
+    "ground_truth": "No, TLS 1.0 and TLS 1.1 have been sunset and disabled. All internal microservices and edge endpoints must enforce TLS 1.2 or TLS 1.3.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests TLS 1.2/1.3 requirement against outdated 2020 sunset notice in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Compare the PTO rollover rules with the wellness stipend monthly rollover policy.",
+    "ground_truth": "PTO allows rolling over up to 5 unused days into the next calendar year, whereas the wellness stipend ($150/mo) is strictly use-it-or-lose-it with zero rollover.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2",
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "lookup_type": "multi_source",
+    "description": "Multi-source: Cross-policy comparison requiring both PTO policy and Wellness reimbursement docs.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What are the rules for working from abroad, and where can I get IT hardware walkup support if my laptop breaks in Sunnyvale before traveling?",
+    "ground_truth": "Working abroad for 14+ days requires a Workday attestation. For hardware issues in Sunnyvale, visit GSD Walkup in Building E (1st floor, 8am-5pm PT).",
+    "expected_source": [
+      "https://drive.google.com/open?id=15STc5gr07FuChtiZ5xrmqOtB99DXQVLk",
+      "https://drive.google.com/open?id=13N44VqHee46G9uSsKgI09MueaYlUZh2s"
+    ],
+    "lookup_type": "multi_source",
+    "description": "Multi-source: Combines international remote work disclosure with Sunnyvale IT Walkup support location.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "If I am onboarding as a new engineer, how do I set up Python tooling and request access for KonaPlus?",
+    "ground_truth": "Use uv and internal Artifactory for Python projects, and submit an IdentityIQ ticket for KonaPlus-User-Role with API key generated via yo/konaplus-onboard.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO",
+      "https://drive.google.com/open?id=1rvsGPeDS5OS92dSBG2In7HjfqWaV3PPq"
+    ],
+    "lookup_type": "multi_source",
+    "description": "Multi-source: Combines engineering Python setup standards with KonaPlus access provisioning.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What are the Pre-Onboarding Checklist steps for konaplus user onboarding?",
+    "ground_truth": "1. Submit IdentityIQ ticket for KonaPlus-User-Role. 2. Join #konaplus-users Slack. 3. Generate API key via yo/konaplus-onboard.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1rvsGPeDS5OS92dSBG2In7HjfqWaV3PPq"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Exact 3 checklist steps for KonaPlus onboarding.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "I'm new to the team, how do I get access to KonaPlus and generate my API token?",
+    "ground_truth": "Request KonaPlus-User-Role in IdentityIQ, join the #konaplus-users Slack channel, and visit yo/konaplus-onboard to generate your API key.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1rvsGPeDS5OS92dSBG2In7HjfqWaV3PPq"
+    ],
+    "lookup_type": "paraphrased",
+    "description": "Paraphrased: Natural employee question about getting KonaPlus credentials.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Do I manage my KonaPlus permissions at konaplus-v1.yahoo.com or submit a Jira ticket for KonaPlus-v1-Read?",
+    "ground_truth": "No, the legacy KonaPlus v1 admin console was decommissioned. All role provisioning is handled through IdentityIQ (KonaPlus-User-Role) via yo/konaplus-onboard.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1rvsGPeDS5OS92dSBG2In7HjfqWaV3PPq"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests active IdentityIQ workflow against deprecated v1 admin console notice in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "what are the steps to mount a zip file as a volume?",
+    "ground_truth": "Ensure zip archive is on shared storage and run fuse-zip -r /path/to/archive.zip /mnt/target_volume.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xnruO_4OGmyCjqvi8A1QWyrLEo0BMljN"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Steps and fuse-zip command to mount zip files without unpacking.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Is running standard unzip archive.zip -d /target/ the recommended way to mount a zip volume?",
+    "ground_truth": "No, unzip extracts files to local disk. To mount a zip file as a filesystem volume without extracting, use fuse-zip.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xnruO_4OGmyCjqvi8A1QWyrLEo0BMljN"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests fuse-zip mounting against command-line unzip best practices doc in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What's the onboarding process for Claude?",
+    "ground_truth": "Request IdentityIQ group EITAI-Claude-Users, access via internal AI gateway, and join #eitai-announcements.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1V5c9f9PWY3RZQWhNjkJfbNlab_1Gp01e"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: IdentityIQ group and onboarding steps for Claude LLM.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Should we send Claude API calls to the legacy gateway-v1.yahoo.com endpoint?",
+    "ground_truth": "No, API Gateway v1 was deprecated and shut down. All Claude LLM requests must use EITAI AI Gateway v2.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1V5c9f9PWY3RZQWhNjkJfbNlab_1Gp01e"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests current AI Gateway against deprecated API Gateway v1 notice in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Give me a list of all of my EITAI tickets that have status In Progress",
+    "ground_truth": "EITAI-1466, EITAI-1417, EITAI-1377, and EITAI-1235.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10LnLzfSfDTCSt0uQgN-OHb7yphYDL-Fa"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Specific active In Progress Jira tickets on EITAI board.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "how many EITAI tickets in the AI development Kanban board are assigned to Gary Yeung that have status Ready for Acceptance?",
+    "ground_truth": "1 ticket (EITAI-1365).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xeskKBo8s3T6GmBQugCSs4I-k1Hu8K9m"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Specific ticket assigned to Gary Yeung in Ready for Acceptance.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Are active EITAI sprint boards located on jira.yahoo-inc.com on-prem server?",
+    "ground_truth": "No, legacy on-prem Jira (jira.yahoo-inc.com) is decommissioned and read-only. Active EITAI development Kanban boards are hosted on Jira Cloud at ouryahoo.atlassian.net.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10LnLzfSfDTCSt0uQgN-OHb7yphYDL-Fa"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests Jira Cloud (ouryahoo.atlassian.net) against deprecated on-prem Jira doc in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "Full-time employees receive PTO/FTO with up to 5 days rollover into the following calendar year.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Annual PTO allocation and 5-day rollover rule.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "how many unused vacation days can I carry over into next year before they expire?",
+    "ground_truth": "You can roll over a maximum of 5 unused PTO days into the next calendar year. Excess unused days expire on December 31.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "lookup_type": "paraphrased",
+    "description": "Paraphrased: Practical employee query about PTO carryover.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Does Yahoo allow 10 days of PTO rollover like under the historical 2022 policy?",
+    "ground_truth": "No, the rollover limit is strictly 5 days of unused PTO per calendar year.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests active 5-day rollover limit against historical 2022 holiday schedules in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "In Workday under Manager Self-Service, submit Contingent Worker Extension at least 14 business days prior to expiration (18-month tenure limit).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1hmGqbgWxK9u0IpAqZJIpURzEjPPTsq00"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Workday Manager Self-Service lead time (14 days) and max tenure (18 months).",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Should an extending contractor return their physical badge to Sunnyvale Building E security immediately?",
+    "ground_truth": "No, badge return to Security Operations is required only upon full offboarding/assignment completion, not when submitting a tenure extension.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1hmGqbgWxK9u0IpAqZJIpURzEjPPTsq00"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests extension process against offboarding badge return instructions in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "give me information about work from abroad policy",
+    "ground_truth": "Work@Yahoo policy requires disclosing work outside resident location if working 14 or more cumulative days in a calendar year via Workday attestation.",
+    "expected_source": [
+      "https://drive.google.com/open?id=15STc5gr07FuChtiZ5xrmqOtB99DXQVLk"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: 14-day international work disclosure threshold.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Is remote work governed by the emergency 2020 temporary remote work COVID policy without Workday attestations?",
+    "ground_truth": "No, the 2020 emergency policy is archived. Remote work and international travel are governed by the permanent Work@Yahoo Global Remote policy requiring Workday disclosure.",
+    "expected_source": [
+      "https://drive.google.com/open?id=15STc5gr07FuChtiZ5xrmqOtB99DXQVLk"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests active Work@Yahoo policy against archived 2020 COVID remote work doc in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "give me information about walkup window locations and hours",
+    "ground_truth": "Sunnyvale HQ (Bldg E 1st floor 8am-5pm PT), NY Times Square (6th floor 9am-5pm ET), Dublin (3rd floor 9am-4:30pm IST).",
+    "expected_source": [
+      "https://drive.google.com/open?id=13N44VqHee46G9uSsKgI09MueaYlUZh2s"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Locations, buildings, floors, and operating hours for IT walkup desks.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Is the Sunnyvale IT hardware support desk located in Building B on the 1st floor?",
+    "ground_truth": "No, Building B 1st floor is the Cafe & Grab-n-Go. The IT Support & GSD Walkup Hardware desk is located in Building E, 1st floor.",
+    "expected_source": [
+      "https://drive.google.com/open?id=13N44VqHee46G9uSsKgI09MueaYlUZh2s"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests IT walkup location (Bldg E) against Building B Cafe menu/location doc in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "when is the next open house and what is the slack channel and provide me TheStreet link",
+    "ground_truth": "Second Thursday of each month at 10am PT / 1pm ET. Official Slack channel is #openhouse-official. Link on TheStreet is yo/thestreet.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1mkx36voGKrMn-evuFZrablXO99sIk-PC"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Schedule (2nd Thursday), Slack channel (#openhouse-official), and shortlink (yo/thestreet).",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What are the rules for Sunnyvale HQ parking and EV charging?",
+    "ground_truth": "Parking permits are not required for open surface lots and garages (Garage A & B). EV charging stations have a 4-hour maximum charging limit.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1mkC9lhcarzOWQAzPEyVEi97J6Pb45rbG"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Parking permit rules and EV charging time limits.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Is the pre-tax commuter transit subsidy capped at the 2022 rate of $280 per month?",
+    "ground_truth": "No, pre-tax transit subsidies through HealthEquity/WageWorks are indexed to the active IRS limit ($315/month).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1mkC9lhcarzOWQAzPEyVEi97J6Pb45rbG"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests active transit limits against outdated 2022 transit pass archive in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What is the itemized receipt threshold for corporate credit card business meals in Concur?",
+    "ground_truth": "Itemized receipts are mandatory for all individual business meal expenses exceeding $75 in Concur Expense.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1pt6Yx9_21Qm7DBdBi8cbNdgX9Sj5hma3"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: $75 meal receipt threshold in Concur Expense.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "How often are engineers eligible for a laptop hardware refresh?",
+    "ground_truth": "Full-time engineers are eligible for a laptop hardware refresh every 36 months (3 years) via ServiceDesk request.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1AtUcVCAzTmz-uJ5TqmLiu05StJl5gYxc"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: 36-month / 3-year laptop refresh schedule.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "What VPN client should employees use for secure remote corporate network access?",
+    "ground_truth": "Use the GlobalProtect Zero-Trust Gateway connecting to gp.yahoo-inc.com.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1towlgzkyZlRCqRE0X44gXI4gvT5wrq00"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Active GlobalProtect client endpoint (gp.yahoo-inc.com).",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Should I configure Cisco AnyConnect connecting to vpn.yahoo-inc.com for remote access?",
+    "ground_truth": "No, Cisco AnyConnect (vpn.yahoo-inc.com) is deprecated. All corporate network access is routed through GlobalProtect (gp.yahoo-inc.com).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1towlgzkyZlRCqRE0X44gXI4gvT5wrq00"
+    ],
+    "lookup_type": "adversarial",
+    "description": "Adversarial: Tests GlobalProtect requirement against deprecated Cisco AnyConnect guide in Folder 2.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "How do visitors connect to the guest Wi-Fi network at Yahoo offices?",
+    "ground_truth": "Connect to SSID 'Yahoo-Guest', enter host employee's email on the captive portal, and have the host confirm the 1-click prompt.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1H6OPSQAdsDBjzGkjG52FOeGIYCLzGQKl"
+    ],
+    "lookup_type": "factual",
+    "description": "Factual lookup: Yahoo-Guest SSID and host email confirmation workflow.",
+    "connector_id": "gdrive-connector_1782848677730_google_drive"
+  },
+  {
+    "query": "Explain how the wellness stipend intersects with our general employee guidelines and time off rules.",
+    "ground_truth": "$150 per month reimbursement for health, fitness classes, and wellness expenses.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J",
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "multi_source",
+    "description": "Multi-source scenario testing cross-document citation grounding. (Target docs: wellness_stipend_reimbursement.md | global_time_off_page.md)"
+  },
+  {
+    "query": "What is the official procedure and limit for can I get reimbursed for my gym membership or fitness classes and covered?",
+    "ground_truth": "Yes, eligible employees receive up to $150 per month to reimburse gym memberships, fitness classes, athletic shoes, and wellness apps.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "factual",
+    "description": "Direct lookup variation testing concise retrieval on can I get reimbursed for my gym membership or fitness classes and covered. (Target docs: wellness_stipend_reimbursement.md)"
+  },
+  {
+    "query": "Where can I find details about Is the wellness benefit still a $50 quarterly gym discount for partner gyms and what's the requirement?",
+    "ground_truth": "No, the historical 2021 policy of a $50 quarterly discount has been replaced by the active $150 monthly wellness stipend reimbursement program.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "paraphrased",
+    "description": "Conversational phrasing testing semantic search robustness on Is the wellness benefit still a $50 quarterly gym discount for partner gyms. (Target docs: wellness_stipend_reimbursement.md)"
+  },
+  {
+    "query": "Please check if Does unused wellness stipend balance roll over to the next month changed from historical rules and cite the active policy.",
+    "ground_truth": "No, unused balances from the $150 monthly limit do not roll over to subsequent months (use it or lose it).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "adversarial",
+    "description": "Adversarial prompt testing discrimination between active Folder 1 policy vs Folder 2 distractor on Does unused wellness stipend balance roll over to the next month. (Target docs: wellness_stipend_reimbursement.md)"
+  },
+  {
+    "query": "Explain how how do I use python at Yahoo intersects with our general employee guidelines and time off rules.",
+    "ground_truth": "Standardize using uv/venv virtual environments, internal Artifactory mirror (artifactory.yahoo.com), pytest, and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO",
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "multi_source",
+    "description": "Multi-source scenario testing cross-document citation grounding. (Target docs: how_to_use_python_at_yahoo.md | global_time_off_page.md)"
+  },
+  {
+    "query": "What is the official procedure and limit for what's the recommended package manager and linter for python projects here?",
+    "ground_truth": "Use uv or python3 -m venv for package management and ruff for fast linting and formatting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "factual",
+    "description": "Direct lookup variation testing concise retrieval on what's the recommended package manager and linter for python projects here. (Target docs: how_to_use_python_at_yahoo.md)"
+  },
+  {
+    "query": "Where can I find details about Should I use Python 2.7 with virtualenv-1.11 and pip install --user for my new service and what's the requirement?",
+    "ground_truth": "No, Python 2.7 reached end-of-life and was deprecated. Modern Yahoo services must use Python 3.12+ with uv and internal Artifactory packages.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1YYMik21vs4_gDZwRXV0rjZkRLoGRtSbO"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "paraphrased",
+    "description": "Conversational phrasing testing semantic search robustness on Should I use Python 2.7 with virtualenv-1.11 and pip install --user for my new service. (Target docs: how_to_use_python_at_yahoo.md)"
+  },
+  {
+    "query": "Please check if How do TLS certs work at Yahoo changed from historical rules and cite the active policy.",
+    "ground_truth": "Authentication and encryption are enforced via internal Certificate Authority (CA) digital signatures and standard TLS handshake.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "adversarial",
+    "description": "Adversarial prompt testing discrimination between active Folder 1 policy vs Folder 2 distractor on How do TLS certs work at Yahoo. (Target docs: how_to_check_tls_cert.md)"
+  },
+  {
+    "query": "Explain how Can internal services still support TLS 1.0 or TLS 1.1 for legacy backward compatibility intersects with our general employee guidelines and time off rules.",
+    "ground_truth": "No, TLS 1.0 and TLS 1.1 have been sunset and disabled. All internal microservices and edge endpoints must enforce TLS 1.2 or TLS 1.3.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ",
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "multi_source",
+    "description": "Multi-source scenario testing cross-document citation grounding. (Target docs: how_to_check_tls_cert.md | global_time_off_page.md)"
+  },
+  {
+    "query": "What is the official procedure and limit for Compare the PTO rollover rules with the wellness stipend monthly rollover policy.?",
+    "ground_truth": "PTO allows rolling over up to 5 unused days into the next calendar year, whereas the wellness stipend ($150/mo) is strictly use-it-or-lose-it with zero rollover.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2",
+      "https://drive.google.com/open?id=1EG51BrIqhnJKW0LlcQxt0kwpp8O-MD1J"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "factual",
+    "description": "Direct lookup variation testing concise retrieval on Compare the PTO rollover rules with the wellness stipend monthly rollover policy.. (Target docs: global_time_off_page.md | wellness_stipend_reimbursement.md)"
+  },
+  {
+    "query": "Where can I find details about What are the rules for working from abroad, and where can I get IT hardware walkup support if my laptop breaks in Sunnyvale before traveling and what's the requirement?",
+    "ground_truth": "Working abroad for 14+ days requires a Workday attestation. For hardware issues in Sunnyvale, visit GSD Walkup in Building E (1st floor, 8am-5pm PT).",
+    "expected_source": [
+      "https://drive.google.com/open?id=15STc5gr07FuChtiZ5xrmqOtB99DXQVLk",
+      "https://drive.google.com/open?id=13N44VqHee46G9uSsKgI09MueaYlUZh2s"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "lookup_type": "paraphrased",
+    "description": "Conversational phrasing testing semantic search robustness on What are the rules for working from abroad, and where can I get IT hardware walkup support if my laptop breaks in Sunnyvale before traveling. (Target docs: work_from_abroad_policy.md | gsd_walkup_windows_locations_and_hours.md)"
+  }
+]

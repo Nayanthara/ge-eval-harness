@@ -1,0 +1,72 @@
+[
+  {
+    "query": "how do I use python at Yahoo?",
+    "ground_truth": "Standardize using uv/venv, internal Artifactory mirror (artifactory.yahoo.com), pytest, and ruff for linting.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1UB4r70drMU5izq_JkhVcW3jvAvILXYiC"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "how_to_use_python_at_yahoo.md"
+  },
+  {
+    "query": "How do TLS certs work?",
+    "ground_truth": "Authentication and encryption via Certificate Authority (CA) digital signatures and TLS handshake.",
+    "expected_source": [
+      "https://drive.google.com/open?id=10QsVyPIcWwMb8uK3_ylHqvxIkqtTMkQJ"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "how_to_check_tls_cert.md"
+  },
+  {
+    "query": "What are the Pre-Onboarding Checklist steps for konaplus user onboarding?",
+    "ground_truth": "1. Submit IdentityIQ ticket for KonaPlus-User-Role. 2. Join #konaplus-users Slack. 3. Generate API key via yo/konaplus-onboard.",
+    "expected_source": [
+      "https://drive.google.com/a/thomascummins.altostrat.com/open?id=1jJanDEpvMHbeEPLxBG2tsVpduyR5Twls"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "user_onboarding_yo_konaplus_onboard.md"
+  },
+  {
+    "query": "what are the steps to mount a zip file as a volume?",
+    "ground_truth": "Ensure zip archive is on shared storage and run fuse-zip -r /path/to/archive.zip /mnt/target_volume.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xnruO_4OGmyCjqvi8A1QWyrLEo0BMljN"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "mounting_a_zip_file_as_a_volume.md"
+  },
+  {
+    "query": "how many EITAI tickets in the AI development Kanban board are assigned to Gary Yeung that have status Ready for Acceptance?",
+    "ground_truth": "1 ticket (EITAI-1365).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1xeskKBo8s3T6GmBQugCSs4I-k1Hu8K9m"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "eitai_ready_for_acceptance_gary_yeung.md"
+  },
+  {
+    "query": "What is Yahoo's time off policy?",
+    "ground_truth": "Full-time employees receive PTO/FTO with up to 5 days rollover into the following calendar year.",
+    "expected_source": [
+      "https://drive.google.com/open?id=1-gqMRZ1pj32QgwAJZ-XG4diUCZJEdUp2"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "global_time_off_page.md"
+  },
+  {
+    "query": "How do I extend a contingent worker?",
+    "ground_truth": "In Workday under Manager Self-Service, submit Contingent Worker Extension at least 14 business days prior to expiration (18-month tenure limit).",
+    "expected_source": [
+      "https://drive.google.com/open?id=1hmGqbgWxK9u0IpAqZJIpURzEjPPTsq00"
+    ],
+    "connector_id": "gdrive-connector_1782848677730_google_drive",
+    "glean_response_text": "",
+    "glean_source_urls": "contingent_worker_extension.md"
+  }
+]

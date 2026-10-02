@@ -1,0 +1,9 @@
+{
+  "base_data_dir": "backend/data",
+  "datasets_dir": "backend/data/datasets",
+  "runs_dir": "backend/data/runs",
+  "analysis_dir": "backend/data/analysis",
+  "logs_dir": "backend/data/logs",
+  "static_dir": "backend/static",
+  "templates_dir": "backend/templates"
+}

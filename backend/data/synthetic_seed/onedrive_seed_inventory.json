@@ -1,0 +1,317 @@
+{
+  "user_principal_name": "alex.chen@contoso.com",
+  "display_name": "Alex Chen",
+  "job_title": "Senior Cloud Solutions Architect",
+  "root_folder": "/personal/alex_chen_contoso_com/Documents",
+  "files": [
+    {
+      "name": "FY26_Cloud_Migration_Strategy.docx",
+      "folder_path": "/Documents/Architecture/",
+      "file_type": "docx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size_bytes": 1048576,
+      "size_display": "1.0 MB",
+      "owner": "Alex Chen (alex.chen@contoso.com)",
+      "last_modified": "2026-09-27T18:30:00Z",
+      "modified_by": "Alex Chen",
+      "shared_with": [
+        "Cloud Infrastructure Engineering Group (18 members)"
+      ],
+      "edit_permission_count": 18,
+      "contains_mentions": [
+        "Gemini Enterprise",
+        "Cloud Migration",
+        "Zero Trust"
+      ],
+      "content_summary": "Comprehensive 3-phase cloud migration strategy detailing the transition from on-prem VMware to GCP and Azure, targeting 99.99% availability, zero-trust network perimeter, and $4.2M annual savings."
+    },
+    {
+      "name": "Global_Infrastructure_Cost_Model.xlsx",
+      "folder_path": "/Documents/Finance/",
+      "file_type": "xlsx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "size_bytes": 3145728,
+      "size_display": "3.0 MB",
+      "owner": "Alex Chen (alex.chen@contoso.com)",
+      "last_modified": "2026-09-26T11:20:00Z",
+      "modified_by": "Alex Chen",
+      "shared_with": [
+        "Enterprise Architecture & Finance Team (14 members)"
+      ],
+      "edit_permission_count": 14,
+      "contains_mentions": [
+        "FinOps",
+        "CapEx",
+        "OpEx",
+        "Reserved Instances"
+      ],
+      "content_summary": "Detailed financial spreadsheet projecting infrastructure spend across AWS, GCP, and Azure with sensitivity analysis."
+    },
+    {
+      "name": "Zero_Trust_Architecture_Spec.pdf",
+      "folder_path": "/Documents/Security/",
+      "file_type": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 5242880,
+      "size_display": "5.0 MB",
+      "owner": "Marcus Vance (marcus.vance@contoso.com)",
+      "last_modified": "2026-09-28T14:15:00Z",
+      "modified_by": "Marcus Vance",
+      "shared_with": [
+        "alex.chen@contoso.com",
+        "Security Operations Team"
+      ],
+      "edit_permission_count": 5,
+      "contains_mentions": [
+        "mTLS",
+        "Micro-segmentation",
+        "Firewall"
+      ],
+      "sections": {
+        "Executive Summary": "Zero Trust security framework principles for all Contoso workloads.",
+        "Network Segmentation & Firewall Rules": "All VPC subnets must enforce micro-segmentation with default-deny ingress rules, require TLS 1.3 mutual authentication (mTLS) for east-west microservice traffic, and block all direct public IPv4 ingress to production database clusters."
+      }
+    },
+    {
+      "name": "Q3_Executive_Briefing.pptx",
+      "folder_path": "/Documents/Presentations/",
+      "file_type": "pptx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+      "size_bytes": 15518920,
+      "size_display": "14.8 MB",
+      "owner": "Alex Chen (alex.chen@contoso.com)",
+      "last_modified": "2026-09-25T16:45:00Z",
+      "modified_by": "Alex Chen",
+      "shared_with": [
+        "Executive Committee"
+      ],
+      "edit_permission_count": 3,
+      "content_summary": "Slide deck overviewing cloud performance, reliability metrics, and GenAI implementation roadmap."
+    },
+    {
+      "name": "Kubernetes_Deployment_Guide.pdf",
+      "folder_path": "/Documents/Engineering/",
+      "file_type": "pdf",
+      "mime_type": "application/pdf",
+      "size_bytes": 2097152,
+      "size_display": "2.0 MB",
+      "owner": "Alex Chen (alex.chen@contoso.com)",
+      "last_modified": "2026-09-20T10:00:00Z",
+      "modified_by": "Alex Chen",
+      "shared_with": [
+        "Engineering Team"
+      ],
+      "edit_permission_count": 8,
+      "content_summary": "Step-by-step instructions for deploying production microservices on GKE and AKS using Helm 3 and ArgoCD."
+    },
+    {
+      "name": "Disaster_Recovery_Runbook_v4.docx",
+      "folder_path": "/Documents/Engineering/Operations/Disaster_Recovery/",
+      "file_type": "docx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size_bytes": 850000,
+      "size_display": "830 KB",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-24T09:10:00Z",
+      "modified_by": "Alex Chen",
+      "shared_with": [
+        "SRE On-Call Team"
+      ],
+      "edit_permission_count": 6,
+      "content_summary": "Runbook specifying 4-hour RPO and 15-minute RTO disaster recovery procedures for core database and identity services."
+    },
+    {
+      "name": "Enterprise_AI_Assistance_Evaluation_Spec.docx",
+      "folder_path": "/Documents/Architecture/",
+      "file_type": "docx",
+      "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size_bytes": 620000,
+      "size_display": "605 KB",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-22T13:00:00Z",
+      "modified_by": "Alex Chen",
+      "contains_mentions": [
+        "Gemini Enterprise",
+        "Retrieval Augmented Generation",
+        "Evaluation Harness"
+      ],
+      "content_summary": "Architecture specification for deploying Gemini Enterprise connectors and evaluating response groundedness."
+    },
+    {
+      "name": "HR_Analytics_Platform_Design.docx",
+      "folder_path": "/Documents/HR_Collab/",
+      "file_type": "docx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-18T14:00:00Z",
+      "shared_with": [
+        "sarah.jenkins@contoso.com"
+      ],
+      "content_summary": "High-level design document for privacy-preserving HR analytics pipeline."
+    },
+    {
+      "name": "Talent_Acquisition_Budget_Model.xlsx",
+      "folder_path": "/Documents/HR_Collab/",
+      "file_type": "xlsx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-08-14T11:00:00Z",
+      "modified_by": "Sarah Jenkins",
+      "shared_with": [
+        "sarah.jenkins@contoso.com"
+      ],
+      "content_summary": "Financial model for technical hiring in 2026."
+    },
+    {
+      "name": "Employee_Experience_Survey_Results.pdf",
+      "folder_path": "/Documents/HR_Collab/",
+      "file_type": "pdf",
+      "owner": "Alex Chen",
+      "last_modified": "2026-08-10T09:30:00Z",
+      "shared_with": [
+        "sarah.jenkins@contoso.com"
+      ],
+      "content_summary": "Aggregated employee feedback on remote tooling and developer productivity."
+    },
+    {
+      "name": "Cloud_Architecture_Townhall_Deck.pptx",
+      "folder_path": "/Documents/Presentations/",
+      "file_type": "pptx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-15T10:00:00Z",
+      "modified_by": "Alex Chen",
+      "content_summary": "All-hands technical presentation on multi-cloud transformation."
+    },
+    {
+      "name": "Global_Payroll_Consolidated_Confidential.xlsx",
+      "folder_path": "/Documents/Finance/",
+      "file_type": "xlsx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-12T16:00:00Z",
+      "tags": [
+        "Confidential",
+        "PII",
+        "Payroll"
+      ],
+      "contains_pii_phi": true,
+      "pii_details": "Contains employee full names, Social Security Numbers (SSNs), and banking routing numbers.",
+      "content_summary": "Sensitive payroll consolidation sheet."
+    },
+    {
+      "name": "Draft_Vendor_Risk_Assessment.docx",
+      "folder_path": "/Documents/Compliance/",
+      "file_type": "docx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-11T12:00:00Z",
+      "tags": [
+        "Draft",
+        "Vendor"
+      ],
+      "content_summary": "Preliminary security and compliance assessment of third-party SaaS vendors."
+    },
+    {
+      "name": "Leadership_Offsite_Keynote_Draft.pptx",
+      "folder_path": "/Documents/Presentations/",
+      "file_type": "pptx",
+      "owner": "Alex Mercer (alex.mercer@contoso.com)",
+      "last_modified": "2026-07-22T17:00:00Z",
+      "modified_by": "Alex Mercer",
+      "shared_with": [
+        "alex.chen@contoso.com"
+      ],
+      "tags": [
+        "Draft",
+        "Leadership"
+      ],
+      "content_summary": "Executive slides prepared by Alex Mercer and shared with Alex Chen."
+    },
+    {
+      "name": "Clinical_Trial_Patient_Cohort_PHI.xlsx",
+      "folder_path": "/Documents/Healthcare/",
+      "file_type": "xlsx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-08T15:00:00Z",
+      "contains_pii_phi": true,
+      "pii_details": "Contains patient full names, Medical Record Numbers (MRNs), and ICD-10 diagnosis codes.",
+      "content_summary": "Clinical trial data extract with PHI."
+    },
+    {
+      "name": "Public_Employee_Directory_2026.pdf",
+      "folder_path": "/Documents/Public/",
+      "file_type": "pdf",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-05T10:00:00Z",
+      "sharing_type": "Anyone with the link (Anonymous Public)",
+      "content_summary": "Publicly shareable general directory of Contoso office locations and department heads."
+    },
+    {
+      "name": "OpenSource_Compliance_Notice.docx",
+      "folder_path": "/Documents/Public/",
+      "file_type": "docx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-04T11:00:00Z",
+      "sharing_type": "Anyone with the link (Anonymous Public)",
+      "content_summary": "Third-party open source software attribution and copyright notices."
+    },
+    {
+      "name": "External_Audit_Engagement_Letter.pdf",
+      "folder_path": "/Documents/Compliance/",
+      "file_type": "pdf",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-03T14:00:00Z",
+      "shared_with": [
+        "audit-team@deloitte-partner.com"
+      ],
+      "external_sharing": true,
+      "content_summary": "Formal engagement letter for external financial and security audits."
+    },
+    {
+      "name": "Cloud_Vendor_SLA_Matrix.xlsx",
+      "folder_path": "/Documents/Vendors/",
+      "file_type": "xlsx",
+      "owner": "Alex Chen",
+      "last_modified": "2026-09-02T09:00:00Z",
+      "shared_with": [
+        "j.smith@externalconsultant.io"
+      ],
+      "external_sharing": true,
+      "content_summary": "Service Level Agreement matrix across external cloud vendors."
+    },
+    {
+      "name": "Budget_Forecast_2026_Final.xlsx",
+      "folder_path": "/Documents/Finance/",
+      "file_type": "xlsx",
+      "size_bytes": 250880,
+      "md5": "a3f9e87b6c5d4e3f2a1b0c9d8e7f6a5b",
+      "content_summary": "FY2026 financial forecast spreadsheet (original in Finance)."
+    },
+    {
+      "name": "Budget_Forecast_Copy.xlsx",
+      "folder_path": "/Documents/Archive/",
+      "file_type": "xlsx",
+      "size_bytes": 250880,
+      "md5": "a3f9e87b6c5d4e3f2a1b0c9d8e7f6a5b",
+      "is_duplicate_of": "Budget_Forecast_2026_Final.xlsx",
+      "content_summary": "Identical copy of FY2026 financial forecast spreadsheet."
+    },
+    {
+      "name": "Legacy_Cisco_VPN_Configuration_2024.docx",
+      "folder_path": "/Documents/Archive/",
+      "file_type": "docx",
+      "last_modified": "2025-11-10T10:00:00Z",
+      "content_summary": "Deprecated VPN setup document, untouched for over 90 days."
+    },
+    {
+      "name": "Old_Datacenter_Inventory_Archive.xlsx",
+      "folder_path": "/Documents/Archive/",
+      "file_type": "xlsx",
+      "last_modified": "2025-10-05T08:00:00Z",
+      "content_summary": "Decommissioned hardware inventory, untouched for over 90 days."
+    },
+    {
+      "name": "Employee_Handbook_2023_Archive.pdf",
+      "folder_path": "/Documents/Archive/",
+      "file_type": "pdf",
+      "last_modified": "2025-06-01T12:00:00Z",
+      "content_summary": "Archived employee handbook, untouched for over 90 days."
+    }
+  ]
+}

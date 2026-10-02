@@ -1,0 +1,25 @@
+<!-- SCREEN: DATASET VIEWER (READ-ONLY IN-PLACE VIEW) -->
+<div id="screen-dataset-viewer" class="screen-content">
+    <header>
+        <div>
+            <div style="display: flex; align-items: center; gap: 0.65rem;">
+                <span style="font-size: 1.35rem;">🔒</span>
+                <h1 id="viewer-dataset-title" style="margin: 0; font-size: 1.3rem;">Dataset Viewer</h1>
+                <span id="viewer-dataset-badge" class="badge badge-pass" style="font-size: 0.72rem; padding: 0.15rem 0.55rem;">Read-Only Snapshot</span>
+            </div>
+            <div id="viewer-dataset-subtitle" class="subtitle" style="margin-top: 0.25rem;">
+                Loading scenarios...
+            </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button class="btn btn-secondary" id="viewer-edit-rerun-btn" onclick="editOrRerunCurrentViewerDataset()" style="display: inline-flex; align-items: center; gap: 0.35rem;">🔄 Edit & Re-run</button>
+            <button class="btn btn-secondary" id="viewer-back-btn" onclick="returnFromDatasetViewer()">⬅️ Back to Datasets</button>
+        </div>
+    </header>
+
+    <div class="card">
+        <div id="viewer-dataset-body">
+            <div style="text-align: center; padding: 2rem; color: var(--text-sub);">Loading scenarios...</div>
+        </div>
+    </div>
+</div>
